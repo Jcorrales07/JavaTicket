@@ -2,8 +2,11 @@ package javaticketinferface;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
-public class Login extends javax.swing.JFrame {
+/** @author Joe Corrales */
+public class Login extends JFrame {
 
     /**
      * Creates new form Login
@@ -11,8 +14,10 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
+        User.users.add(new Admin("", "admin", "supersecreto", 0));
     }
     
+    @Override
     public Image getIconImage() {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("images/carrito.png"));
         return retValue;
@@ -66,6 +71,8 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setText("Password");
 
         txtPassword.setBackground(new java.awt.Color(102, 102, 102));
+        txtPassword.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        txtPassword.setForeground(new java.awt.Color(255, 255, 255));
         txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPasswordActionPerformed(evt);
@@ -154,7 +161,14 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPasswordActionPerformed
 
     private void btnSigninActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSigninActionPerformed
-        // TODO add your handling code here:
+        String user = txtUsername.getText();
+        String pass = txtPassword.getText();
+        for (int i = 0; i < User.users.size(); i++) {
+            if (User.users.get(i).getUsername().equalsIgnoreCase(user) 
+                    && User.users.get(i).getPassword().equals(pass)) {
+                JOptionPane.showMessageDialog(null, "Has entrado");
+            } else JOptionPane.showMessageDialog(null, "Incorrect username or password");
+        }
     }//GEN-LAST:event_btnSigninActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
