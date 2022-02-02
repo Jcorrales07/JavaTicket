@@ -8,15 +8,15 @@ public class User {
     protected String name;
     protected String username;
     protected String password;
-    protected int edad;
+    protected int age;
     
     public User() {}
 
-    public User(String name, String username, String password, int edad) {
+    public User(String name, String username, String password, int age) {
         this.name = name;
         this.username = username;
         this.password = password;
-        this.edad = edad;
+        this.age = age;
     }
     
     public String getName() {
@@ -43,11 +43,11 @@ public class User {
         this.password = password;
     }
 
-    public int getEdad() {
-        return edad;
+    public int getAge() {
+        return age;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setAge(int age) {
+        this.age = age;
     }
 }
