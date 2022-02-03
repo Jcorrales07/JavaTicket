@@ -13,6 +13,7 @@ public class Event {
     public Event() {}
 
     public Event(String entTitle, String entDescription, Date date, double rentAmount) {
+        Event.code++;
         this.entTitle = entTitle;
         this.entDescription = entDescription;
         this.date = date;
@@ -21,10 +22,6 @@ public class Event {
     
     public static int getCode() {
         return code;
-    }
-
-    public static void setCode(int code) {
-        Event.code = code;
     }
 
     public String getEntTitle() {
@@ -58,4 +55,17 @@ public class Event {
     public void setRentAmount(double rentAmount) {
         this.rentAmount = rentAmount;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Event{entTitle=").append(entTitle);
+        sb.append(", entDescription=").append(entDescription);
+        sb.append(", date=").append(date);
+        sb.append(", rentAmount=").append(rentAmount);
+        sb.append('}');
+        return sb.toString();
+    }
+    
+    
 }
