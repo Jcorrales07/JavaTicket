@@ -4,7 +4,7 @@ import java.util.Date;
 
 /** @author Joe Corrales */
 public class Event {
-    protected static int code;
+    protected static int id;
     protected String entTitle;
     protected String entDescription;
     protected Date date;
@@ -13,19 +13,19 @@ public class Event {
     public Event() {}
 
     public Event(String entTitle, String entDescription, Date date, double rentAmount) {
-        Event.code++;
+        Event.id++;
         this.entTitle = entTitle;
         this.entDescription = entDescription;
         this.date = date;
         this.rentAmount = rentAmount;
     }
     
-    public static int getCode() {
-        return code;
+    public int getId() {
+        return this.id;
     }
 
     public String getEntTitle() {
-        return entTitle;
+        return this.entTitle;
     }
 
     public void setEntTitle(String entTitle) {
@@ -33,7 +33,7 @@ public class Event {
     }
 
     public String getEntDescription() {
-        return entDescription;
+        return this.entDescription;
     }
 
     public void setEntDescription(String entDescription) {
@@ -41,7 +41,7 @@ public class Event {
     }
 
     public Date getDate() {
-        return date;
+        return this.date;
     }
 
     public void setDate(Date date) {
@@ -49,7 +49,7 @@ public class Event {
     }
 
     public double getRentAmount() {
-        return rentAmount;
+        return this.rentAmount;
     }
 
     public void setRentAmount(double rentAmount) {
@@ -59,10 +59,10 @@ public class Event {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Event{entTitle=").append(entTitle);
-        sb.append(", entDescription=").append(entDescription);
-        sb.append(", date=").append(date);
-        sb.append(", rentAmount=").append(rentAmount);
+        sb.append("Event{entTitle=").append(this.entTitle);
+        sb.append(", entDescription=").append(this.entDescription);
+        sb.append(", date=").append(this.date);
+        sb.append(", rentAmount=").append(this.rentAmount);
         sb.append('}');
         return sb.toString();
     }

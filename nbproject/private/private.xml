@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Corra/NetBeansProjects/JavaTicketInferface/src/javaticketinferface/User.java</file>
             <file>file:/C:/Users/Corra/NetBeansProjects/JavaTicketInferface/src/javaticketinferface/Event.java</file>
-            <file>file:/C:/Users/Corra/NetBeansProjects/JavaTicketInferface/src/javaticketinferface/Admin.java</file>
-            <file>file:/C:/Users/Corra/NetBeansProjects/JavaTicketInferface/src/javaticketinferface/ContentUser.java</file>
-            <file>file:/C:/Users/Corra/NetBeansProjects/JavaTicketInferface/src/javaticketinferface/LimitedUser.java</file>
+            <file>file:/C:/Users/Corra/NetBeansProjects/JavaTicketInferface/src/javaticketinferface/SportingEvent.java</file>
             <file>file:/C:/Users/Corra/NetBeansProjects/JavaTicketInferface/src/javaticketinferface/Login.java</file>
+            <file>file:/C:/Users/Corra/NetBeansProjects/JavaTicketInferface/src/javaticketinferface/PrincipalMenu.java</file>
         </group>
     </open-files>
 </project-private>

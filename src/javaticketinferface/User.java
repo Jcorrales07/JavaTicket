@@ -50,4 +50,13 @@ public class User {
     public void setAge(int age) {
         this.age = age;
     }
+    
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{ \nName = '").append(this.name);
+        sb.append(", \nUsername = '").append(this.username);
+        sb.append(", \nPassword = '").append(this.username);
+        sb.append(", \nAge = ").append(this.age).append(" \n}");
+        return sb.toString();
+    }
 }

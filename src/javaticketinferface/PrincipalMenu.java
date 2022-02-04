@@ -1,6 +1,7 @@
 package javaticketinferface;
 
 import java.awt.Dimension;
+import javax.swing.JOptionPane;
 
 /** @author Joe Corrales */
 public class PrincipalMenu extends javax.swing.JFrame {
@@ -10,7 +11,7 @@ public class PrincipalMenu extends javax.swing.JFrame {
      */
     public PrincipalMenu() {
         initComponents();
-        this.setTitle("Principal Menu");
+        this.setTitle("Welcome - Principal Menu");
         this.setLocationRelativeTo(null);
         this.setMinimumSize(new Dimension(642, 680));
         this.setMaximumSize(new Dimension(642, 680));
@@ -33,40 +34,28 @@ public class PrincipalMenu extends javax.swing.JFrame {
         btnReports = new javax.swing.JButton();
         btnUsrManage = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Principal Menu");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(205, 205, 205)
-                .addComponent(jLabel1)
-                .addContainerGap(228, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1)
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 100));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 100));
 
         jPanel3.setBackground(new java.awt.Color(42, 40, 40));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnEvntManage.setBackground(new java.awt.Color(51, 51, 51));
         btnEvntManage.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -78,72 +67,84 @@ public class PrincipalMenu extends javax.swing.JFrame {
                 btnEvntManageActionPerformed(evt);
             }
         });
+        jPanel3.add(btnEvntManage, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 402, 84));
 
         btnReports.setBackground(new java.awt.Color(51, 51, 51));
         btnReports.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btnReports.setForeground(new java.awt.Color(255, 255, 255));
         btnReports.setText("Reports");
+        btnReports.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReportsActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 402, 84));
 
         btnUsrManage.setBackground(new java.awt.Color(51, 51, 51));
         btnUsrManage.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btnUsrManage.setForeground(new java.awt.Color(255, 255, 255));
         btnUsrManage.setText("User Management");
+        btnUsrManage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsrManageActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnUsrManage, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 402, 84));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Options:");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, -1, -1));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(btnUsrManage, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnReports, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnEvntManage, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)))
-                .addContainerGap(138, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(btnEvntManage, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnUsrManage, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnReports, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(176, Short.MAX_VALUE))
-        );
+        btnExit.setBackground(new java.awt.Color(51, 51, 51));
+        btnExit.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        btnExit.setForeground(new java.awt.Color(255, 255, 255));
+        btnExit.setText("EXIT");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 402, 84));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 660, 600));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 720, 630));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 693, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 732, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
+
+    private void btnUsrManageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsrManageActionPerformed
+        //Poner logica para solo dejar entrar al ADMIN
+        //if (Usuario logged in es ADMIN) { dale el menu}
+        UserManagementSubMenu menu = new UserManagementSubMenu();
+        menu.setVisible(true);
+    }//GEN-LAST:event_btnUsrManageActionPerformed
+
+    private void btnReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportsActionPerformed
+        ReportsSubMenu menu = new ReportsSubMenu();
+        menu.setVisible(true);
+    }//GEN-LAST:event_btnReportsActionPerformed
+
     private void btnEvntManageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEvntManageActionPerformed
-        // TODO add your handling code here:
+        EventManagementSubMenu menu = new EventManagementSubMenu();
+        //Poner logica para solo dejar entrar al ADMIN y al de CONTENIDOS
+        //if (Usuario logged in es NO es Limited user) { dale el menu}
+        menu.setVisible(true);
     }//GEN-LAST:event_btnEvntManageActionPerformed
 
     /**
@@ -183,6 +184,7 @@ public class PrincipalMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEvntManage;
+    private javax.swing.JButton btnExit;
     private javax.swing.JButton btnReports;
     private javax.swing.JButton btnUsrManage;
     private javax.swing.JLabel jLabel1;
