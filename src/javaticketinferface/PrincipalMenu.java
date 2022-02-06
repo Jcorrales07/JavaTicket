@@ -34,6 +34,7 @@ public class PrincipalMenu extends javax.swing.JFrame {
         btnReports = new javax.swing.JButton();
         btnUsrManage = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        btnLogOut = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,7 +68,7 @@ public class PrincipalMenu extends javax.swing.JFrame {
                 btnEvntManageActionPerformed(evt);
             }
         });
-        jPanel3.add(btnEvntManage, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 402, 84));
+        jPanel3.add(btnEvntManage, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 402, 84));
 
         btnReports.setBackground(new java.awt.Color(51, 51, 51));
         btnReports.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -78,7 +79,7 @@ public class PrincipalMenu extends javax.swing.JFrame {
                 btnReportsActionPerformed(evt);
             }
         });
-        jPanel3.add(btnReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 402, 84));
+        jPanel3.add(btnReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 402, 84));
 
         btnUsrManage.setBackground(new java.awt.Color(51, 51, 51));
         btnUsrManage.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -89,13 +90,24 @@ public class PrincipalMenu extends javax.swing.JFrame {
                 btnUsrManageActionPerformed(evt);
             }
         });
-        jPanel3.add(btnUsrManage, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 402, 84));
+        jPanel3.add(btnUsrManage, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 402, 84));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Options:");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, -1, -1));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
+
+        btnLogOut.setBackground(new java.awt.Color(51, 51, 51));
+        btnLogOut.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        btnLogOut.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogOut.setText("Log out");
+        btnLogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogOutActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 402, 84));
 
         btnExit.setBackground(new java.awt.Color(51, 51, 51));
         btnExit.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -106,7 +118,7 @@ public class PrincipalMenu extends javax.swing.JFrame {
                 btnExitActionPerformed(evt);
             }
         });
-        jPanel3.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 402, 84));
+        jPanel3.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, 402, 84));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 720, 630));
 
@@ -124,15 +136,18 @@ public class PrincipalMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_btnExitActionPerformed
+    private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
+        Login login = new Login();
+        login.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnLogOutActionPerformed
 
     private void btnUsrManageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsrManageActionPerformed
         //Poner logica para solo dejar entrar al ADMIN
         //if (Usuario logged in es ADMIN) { dale el menu}
         UserManagementSubMenu menu = new UserManagementSubMenu();
         menu.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnUsrManageActionPerformed
 
     private void btnReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportsActionPerformed
@@ -146,6 +161,10 @@ public class PrincipalMenu extends javax.swing.JFrame {
         //if (Usuario logged in es NO es Limited user) { dale el menu}
         menu.setVisible(true);
     }//GEN-LAST:event_btnEvntManageActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,6 +204,7 @@ public class PrincipalMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEvntManage;
     private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnLogOut;
     private javax.swing.JButton btnReports;
     private javax.swing.JButton btnUsrManage;
     private javax.swing.JLabel jLabel1;

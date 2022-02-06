@@ -1,5 +1,7 @@
 package javaticketinferface;
 
+import javax.swing.JOptionPane;
+
 /** @author Joe Corrales */
 public class CreateUser extends javax.swing.JFrame {
 
@@ -11,6 +13,9 @@ public class CreateUser extends javax.swing.JFrame {
         this.setTitle("Create User");
         this.setLocationRelativeTo(null);
     }
+    
+    Login login = new Login();
+    UserManagementSubMenu UserMenu = new UserManagementSubMenu();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -21,6 +26,8 @@ public class CreateUser extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSpinner1 = new javax.swing.JSpinner();
+        jSpinner2 = new javax.swing.JSpinner();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -37,6 +44,7 @@ public class CreateUser extends javax.swing.JFrame {
         btnCreateUser = new javax.swing.JButton();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
         jLabel7 = new javax.swing.JLabel();
+        btnGoBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -51,7 +59,7 @@ public class CreateUser extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Create User");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 100));
 
@@ -67,6 +75,19 @@ public class CreateUser extends javax.swing.JFrame {
         txtUsername.setForeground(new java.awt.Color(255, 255, 255));
         txtUsername.setSelectedTextColor(new java.awt.Color(255, 255, 255));
         txtUsername.setSelectionColor(new java.awt.Color(0, 0, 0));
+        txtUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsernameActionPerformed(evt);
+            }
+        });
+        txtUsername.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtUsernameKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUsernameKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 420, 50));
 
         txtUserType.setBackground(new java.awt.Color(102, 102, 102));
@@ -117,6 +138,11 @@ public class CreateUser extends javax.swing.JFrame {
         txtAge.setForeground(new java.awt.Color(255, 255, 255));
         txtAge.setSelectedTextColor(new java.awt.Color(255, 255, 255));
         txtAge.setSelectionColor(new java.awt.Color(0, 0, 0));
+        txtAge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAgeActionPerformed(evt);
+            }
+        });
         jPanel1.add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 420, 50));
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
@@ -130,13 +156,12 @@ public class CreateUser extends javax.swing.JFrame {
         btnCreateUser.setForeground(new java.awt.Color(255, 255, 255));
         btnCreateUser.setText("Create");
         btnCreateUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCreateUser.setFocusPainted(false);
         btnCreateUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateUserActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCreateUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 660, 170, 50));
+        jPanel1.add(btnCreateUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 660, 170, 50));
         jPanel1.add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 690, 0, 40));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
@@ -144,6 +169,17 @@ public class CreateUser extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Please fill up all the fields in order to create a user");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, -1, -1));
+
+        btnGoBack.setBackground(new java.awt.Color(51, 51, 51));
+        btnGoBack.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
+        btnGoBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnGoBack.setText("Go Back");
+        btnGoBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGoBackActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnGoBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 660, 170, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -153,7 +189,7 @@ public class CreateUser extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 785, Short.MAX_VALUE)
         );
 
         pack();
@@ -165,8 +201,70 @@ public class CreateUser extends javax.swing.JFrame {
 
     private void btnCreateUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateUserActionPerformed
         //Logica para agarrar los datos y pasarlos por un constructor
+        this.createUser();
+        for (int i = 0; i < User.users.size(); i++) {
+            System.out.println((i+1)+ " "+ User.users.get(i).toString());
+        }
     }//GEN-LAST:event_btnCreateUserActionPerformed
 
+    private void btnGoBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoBackActionPerformed
+        UserMenu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnGoBackActionPerformed
+
+    private void txtAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAgeActionPerformed
+
+    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
+        
+    }//GEN-LAST:event_txtUsernameActionPerformed
+
+    private void txtUsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsernameKeyPressed
+
+    }//GEN-LAST:event_txtUsernameKeyPressed
+
+    private void txtUsernameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsernameKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsernameKeyTyped
+
+    private void createUser() {
+        String name = txtName.getText();
+        String username = txtUsername.getText();
+        String password = txtPassword.getText();
+        int age = Integer.parseInt(txtAge.getText());
+        String userType = txtUserType.getText();
+        
+        if (!verifyUsername(username)) {
+            if (verifyAge(age)) {
+                if (userType.charAt(0) == 'a') {
+                    Admin admin = new Admin(name, username, password, age);
+                    User.users.add(admin);
+                } else if (userType.equalsIgnoreCase("Content User")) {
+                    ContentUser Cuser = new ContentUser(name, username, password, age);
+                    User.users.add(Cuser);
+                } else {
+                    LimitedUser Luser = new LimitedUser(name, username, password, age);
+                    User.users.add(Luser);
+                } 
+                JOptionPane.showMessageDialog(this, "User Registered!");
+            }
+        } else JOptionPane.showMessageDialog(this, "Username already taken!");
+    }
+    
+    private boolean verifyUsername(String username) {
+        if (login.searchUser(username) != null)
+            return true;
+        return false;
+    }
+    
+    public boolean verifyAge(int age) {
+        if (age > 0) {
+            if (age >= 18) return true;
+        }
+        JOptionPane.showMessageDialog(this, "Age must be greater than 0 and 18");
+        return false;
+    }
     /**
      * @param args the command line arguments
      */
@@ -204,6 +302,7 @@ public class CreateUser extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreateUser;
+    private javax.swing.JButton btnGoBack;
     private javax.swing.Box.Filler filler1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -214,6 +313,8 @@ public class CreateUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JSpinner jSpinner2;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtName;
     private javax.swing.JPasswordField txtPassword;

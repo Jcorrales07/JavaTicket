@@ -11,7 +11,7 @@ public class UserManagementSubMenu extends javax.swing.JFrame {
         this.setTitle("User Management Menu");
         this.setLocationRelativeTo(null);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -124,6 +124,7 @@ public class UserManagementSubMenu extends javax.swing.JFrame {
     private void btnCreateUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateUserActionPerformed
         CreateUser create = new CreateUser();
         create.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnCreateUserActionPerformed
 
     private void btnDeleteUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteUserActionPerformed
@@ -131,12 +132,15 @@ public class UserManagementSubMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteUserActionPerformed
 
     private void btnEditEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditEventActionPerformed
-        // TODO add your handling code here:
+        EditUser edit = new EditUser();
+        edit.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnEditEventActionPerformed
 
     private void btnPrincipalMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrincipalMenuActionPerformed
         PrincipalMenu menu = new PrincipalMenu();
         menu.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnPrincipalMenuActionPerformed
 
     /**

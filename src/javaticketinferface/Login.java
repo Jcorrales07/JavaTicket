@@ -1,7 +1,5 @@
 package javaticketinferface;
 
-import java.awt.Image;
-import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -15,15 +13,11 @@ public class Login extends JFrame {
         initComponents();
         this.setTitle("Login");
         this.setLocationRelativeTo(null);
-        User.users.add(new Admin("", "admin", "supersecreto", 0));
+        User.users.add(new Admin("Super Admin", "admin", "supersecreto", 999));
     }
     
-    @Override
-    public Image getIconImage() {
-        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("images/carrito.png"));
-        return retValue;
-    }
-
+    PrincipalMenu ventana = new PrincipalMenu();
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -88,6 +82,11 @@ public class Login extends JFrame {
         btnSignin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSigninActionPerformed(evt);
+            }
+        });
+        btnSignin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnSigninKeyPressed(evt);
             }
         });
 
@@ -163,15 +162,7 @@ public class Login extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSigninActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSigninActionPerformed
-        String user = txtUsername.getText();
-        String pass = txtPassword.getText();
-        for (int i = 0; i < User.users.size(); i++) {
-            if (User.users.get(i).getUsername().equalsIgnoreCase(user)
-                && User.users.get(i).getPassword().equals(pass)) {
-                PrincipalMenu ventana = new PrincipalMenu();
-                ventana.setVisible(true);
-            } else JOptionPane.showMessageDialog(null, "Incorrect username or password");
-        }
+        loginAccess();
     }//GEN-LAST:event_btnSigninActionPerformed
 
     private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
@@ -182,6 +173,29 @@ public class Login extends JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsernameActionPerformed
 
+    private void btnSigninKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnSigninKeyPressed
+        loginAccess();
+    }//GEN-LAST:event_btnSigninKeyPressed
+
+    //Method to valid the username and password
+    private void loginAccess() {
+        String user = txtUsername.getText();
+        String pass = txtPassword.getText();
+        for (int i = 0; i < User.users.size(); i++) {
+            if (searchUser(user) != null && searchUser(user).getPassword().equals(pass)) {
+                ventana.setVisible(true);
+                this.setVisible(false);
+            } else JOptionPane.showMessageDialog(this, "Incorrect username or password");
+        }
+    }
+    
+    protected User searchUser(String username) {
+        for (User user: User.users) {
+            if (user.getUsername().equalsIgnoreCase(username))
+                return user;
+        }
+        return null;
+    }
     /**
      * @param args the command line arguments
      */
