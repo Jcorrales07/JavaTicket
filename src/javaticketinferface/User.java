@@ -61,11 +61,11 @@ public class User {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{ \nNumber Id = ").append(this.id);
-        sb.append(", \nName = '").append(this.name);
-        sb.append(", \nUsername = '").append(this.username);
-        sb.append(", \nPassword = '").append(this.password);
-        sb.append(", \nAge = ").append(this.age).append(" \n}");
+        sb.append("{ \nNumber Id = ").append(this.id).append("\'");
+        sb.append(", \nName = '").append(this.name).append("\'");
+        sb.append(", \nUsername = '").append(this.username).append("\'");
+        sb.append(", \nPassword = '").append(this.password).append("\'");
+        sb.append(", \nAge = ").append(this.age).append(" \n}\n");
         return sb.toString();
     }
 }

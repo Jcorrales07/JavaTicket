@@ -237,16 +237,20 @@ public class CreateUser extends javax.swing.JFrame {
         
         if (!verifyUsername(username)) {
             if (verifyAge(age)) {
-                if (userType.charAt(0) == 'a') {
-                    Admin admin = new Admin(name, username, password, age);
-                    User.users.add(admin);
-                } else if (userType.equalsIgnoreCase("Content User")) {
-                    ContentUser Cuser = new ContentUser(name, username, password, age);
-                    User.users.add(Cuser);
-                } else {
-                    LimitedUser Luser = new LimitedUser(name, username, password, age);
-                    User.users.add(Luser);
-                } 
+                switch (userType.toLowerCase().charAt(0)) {
+                    case 'a':
+                        User admin = new Admin(name, username, password, age);
+                        User.users.add(admin);
+                        break;
+                    case 'c':
+                        User Cuser = new ContentUser(name, username, password, age);
+                        User.users.add(Cuser);
+                        break;
+                    default: 
+                        User Luser = new LimitedUser(name, username, password, age);
+                        User.users.add(Luser);
+                        break;
+                }
                 JOptionPane.showMessageDialog(this, "User Registered!");
             }
         } else JOptionPane.showMessageDialog(this, "Username already taken!");
@@ -259,9 +263,7 @@ public class CreateUser extends javax.swing.JFrame {
     }
     
     public boolean verifyAge(int age) {
-        if (age > 0) {
-            if (age >= 18) return true;
-        }
+        if (age > 0) if (age >= 18) return true;
         JOptionPane.showMessageDialog(this, "Age must be greater than 0 and 18");
         return false;
     }

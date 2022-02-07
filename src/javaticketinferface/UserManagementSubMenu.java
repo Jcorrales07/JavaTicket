@@ -128,7 +128,9 @@ public class UserManagementSubMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCreateUserActionPerformed
 
     private void btnDeleteUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteUserActionPerformed
-        // TODO add your handling code here:
+        DeleteUser delete = new DeleteUser();
+        delete.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnDeleteUserActionPerformed
 
     private void btnEditEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditEventActionPerformed

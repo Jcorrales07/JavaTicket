@@ -13,7 +13,6 @@ public class Login extends JFrame {
         initComponents();
         this.setTitle("Login");
         this.setLocationRelativeTo(null);
-        User.users.add(new Admin("Super Admin", "admin", "supersecreto", 999));
     }
     
     PrincipalMenu ventana = new PrincipalMenu();
@@ -179,6 +178,7 @@ public class Login extends JFrame {
 
     //Method to valid the username and password
     private void loginAccess() {
+        if(User.users.isEmpty()) User.users.add(new Admin("Super Admin", "admin", "supersecreto", 999));
         String user = txtUsername.getText();
         String pass = txtPassword.getText();
         for (int i = 0; i < User.users.size(); i++) {

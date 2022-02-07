@@ -3,7 +3,7 @@ package javaticketinferface;
 import java.util.ArrayList;
 
 /** @author Joe Corrales */
-public class Admin extends User {
+public final class Admin extends User {
     protected ArrayList<Event> eventIds;
     
     public Admin(String name, String username, String password, int edad) {
@@ -20,12 +20,4 @@ public class Admin extends User {
 //        sb.append('}');
         return sb.toString();
     }
-
-//    public ArrayList<Event> getEventIds() {
-//        return eventIds;
-//    }
-//
-//    public void setEventIds(ArrayList<Event> eventIds) {
-//        this.eventIds = eventIds;
-//    }
 }

@@ -65,7 +65,7 @@ public class EditUser extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("ID: ");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
 
         txtUserID.setBackground(new java.awt.Color(102, 102, 102));
         txtUserID.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
@@ -85,7 +85,7 @@ public class EditUser extends javax.swing.JFrame {
                 txtUserIDKeyTyped(evt);
             }
         });
-        jPanel1.add(txtUserID, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 200, 50));
+        jPanel1.add(txtUserID, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 200, 50));
 
         btnGoBack.setBackground(new java.awt.Color(51, 51, 51));
         btnGoBack.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
@@ -96,7 +96,7 @@ public class EditUser extends javax.swing.JFrame {
                 btnGoBackActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGoBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 770, 170, 50));
+        jPanel1.add(btnGoBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 770, 170, 50));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -108,20 +108,20 @@ public class EditUser extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Complete Name: ");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
 
         txtName.setBackground(new java.awt.Color(102, 102, 102));
         txtName.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         txtName.setForeground(new java.awt.Color(255, 255, 255));
         txtName.setSelectedTextColor(new java.awt.Color(255, 255, 255));
         txtName.setSelectionColor(new java.awt.Color(0, 0, 0));
-        jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 420, 50));
+        jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 420, 50));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Username: ");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, -1, -1));
 
         txtUsername.setBackground(new java.awt.Color(102, 102, 102));
         txtUsername.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
@@ -141,13 +141,13 @@ public class EditUser extends javax.swing.JFrame {
                 txtUsernameKeyTyped(evt);
             }
         });
-        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 390, 420, 50));
+        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 420, 50));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Password: ");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, -1, -1));
 
         txtPassword.setBackground(new java.awt.Color(102, 102, 102));
         txtPassword.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
@@ -159,13 +159,13 @@ public class EditUser extends javax.swing.JFrame {
                 txtPasswordActionPerformed(evt);
             }
         });
-        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 490, 420, 50));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 490, 420, 50));
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Age: ");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 550, -1, -1));
 
         txtAge.setBackground(new java.awt.Color(102, 102, 102));
         txtAge.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
@@ -177,20 +177,20 @@ public class EditUser extends javax.swing.JFrame {
                 txtAgeActionPerformed(evt);
             }
         });
-        jPanel1.add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 590, 420, 50));
+        jPanel1.add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 590, 420, 50));
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("User Type: ");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 650, -1, -1));
+        jLabel8.setText("User Type: //Falta revisar ");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 650, -1, -1));
 
         txtUserType.setBackground(new java.awt.Color(102, 102, 102));
         txtUserType.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         txtUserType.setForeground(new java.awt.Color(255, 255, 255));
         txtUserType.setSelectedTextColor(new java.awt.Color(255, 255, 255));
         txtUserType.setSelectionColor(new java.awt.Color(0, 0, 0));
-        jPanel1.add(txtUserType, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 690, 420, 50));
+        jPanel1.add(txtUserType, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 690, 420, 50));
 
         btnEditUser.setBackground(new java.awt.Color(51, 51, 51));
         btnEditUser.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
@@ -202,7 +202,7 @@ public class EditUser extends javax.swing.JFrame {
                 btnEditUserActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEditUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 770, 170, 50));
+        jPanel1.add(btnEditUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 770, 170, 50));
 
         btnSearchUser.setBackground(new java.awt.Color(51, 51, 51));
         btnSearchUser.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
@@ -213,7 +213,7 @@ public class EditUser extends javax.swing.JFrame {
                 btnSearchUserActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSearchUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, 180, 50));
+        jPanel1.add(btnSearchUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 180, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -277,38 +277,30 @@ public class EditUser extends javax.swing.JFrame {
             txtUsername.setText(searchId(id).getUsername());
             txtPassword.setText(searchId(id).getPassword());
             txtAge.setText(String.valueOf(searchId(id).getAge()));
+            txtUserType.setText(String.valueOf(searchId(id).getClass().getSimpleName()));
         }
     }//GEN-LAST:event_btnSearchUserActionPerformed
     
     private void editUser() {
-//        int id = Integer.parseInt(txtUserID.getText());
-//        if (searchId(id) != null) {
-//            String name = txtName.getText();
-//            System.out.println("NOMBRE: " + name);
-//            if (isEmpty(name)) searchId(id).setName(name);
-//            String username = txtUsername.getText();
-//            if (isEmpty(username)) searchId(id).setUsername(username);
-//            String password = txtPassword.getText();
-//            if (isEmpty(password)) searchId(id).setPassword(password);
-//            int age = Integer.parseInt(txtAge.getText()); 
-//            if (isEmpty(age)) searchId(id).setAge(age);
-//        }
+            int id = Integer.parseInt(txtUserID.getText());
+            if(searchId(id) != null) {
+                String name = txtName.getText();
+                searchId(id).setName(name);
+                String username = txtUsername.getText();
+                searchId(id).setUsername(username);
+                String password = txtPassword.getText();
+                searchId(id).setPassword(password);
+                int age = Integer.parseInt(txtAge.getText()); 
+                if (cFunc.verifyAge(age)) searchId(id).setAge(age);
+            }
     }
     
-    private boolean isEmpty(String field) {
-        return !(field == null);
-    }
-    
-    private boolean isEmpty(int field) {
-        return !(field == 0);
-    }
-    private User searchId(int id) {
-        for (User user: User.users) {
-            if (user.getId() == id) return user;
-        }
+    public User searchId(int id) {
+        for (User user: User.users) if (user.getId() == id) return user;
         JOptionPane.showConfirmDialog(this, "User not found");
         return null;
     }
+    
     /**
      * @param args the command line arguments
      */
