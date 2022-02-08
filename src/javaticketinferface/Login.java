@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 /** @author Joe Corrales */
 public class Login extends JFrame {
-
+    public static User userLogged;
     /**
      * Creates new form Login
      */
@@ -183,6 +183,7 @@ public class Login extends JFrame {
         String pass = txtPassword.getText();
         for (int i = 0; i < User.users.size(); i++) {
             if (searchUser(user) != null && searchUser(user).getPassword().equals(pass)) {
+                userLogged = searchUser(user);
                 ventana.setVisible(true);
                 this.setVisible(false);
             } else JOptionPane.showMessageDialog(this, "Incorrect username or password");

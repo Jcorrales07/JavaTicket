@@ -1,8 +1,8 @@
 
 package javaticketinferface;
 
-import java.util.Date;
-import javaticketinferface.SportingEvent.Sports;
+import java.util.Calendar;
+import javaticketinferface.SportEvent.Sports;
 
 /**
  *
@@ -12,7 +12,7 @@ public class TestClases {
     public static void main(String[] args) {
         
         //Test de creacion de un evento deportivo
-        SportingEvent myEvent = new SportingEvent("Partido", "Partido de futbol", new Date(), 3000, "Madrid", "Barca", Sports.FOOTBALL);
+        SportEvent myEvent = new SportEvent("Partido", "Partido de futbol", Calendar.getInstance(), 3000, "Madrid", "Barca", Sports.FOOTBALL);
         System.out.println(myEvent);
         
         //Prueba para ver los ids de los eventos que se agregan al arraylist del admin

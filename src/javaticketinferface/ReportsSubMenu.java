@@ -148,6 +148,7 @@ public class ReportsSubMenu extends javax.swing.JFrame {
     private void btnPrincipalMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrincipalMenuActionPerformed
         PrincipalMenu menu = new PrincipalMenu();
         menu.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnPrincipalMenuActionPerformed
 
     private void btnIncomeGeneratedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIncomeGeneratedActionPerformed

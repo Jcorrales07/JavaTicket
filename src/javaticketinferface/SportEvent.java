@@ -1,10 +1,10 @@
 
 package javaticketinferface;
 
-import java.util.Date;
+import java.util.Calendar;
 
 /** @author Joe Corrales */
-public class SportingEvent extends Event {
+public class SportEvent extends Event {
     private String team1;
     private String team2;
     //Se tiene que pedir un tipo de deporte
@@ -18,9 +18,9 @@ public class SportingEvent extends Event {
         BASEBALL
     }
     
-    public SportingEvent() {}
+    public SportEvent() {}
     
-    public SportingEvent(String entTitle, String entDescription, Date date, double rentAmount, String team1, String team2, Sports sportType) {
+    public SportEvent(String entTitle, String entDescription, Calendar date, double rentAmount, String team1, String team2, Sports sportType) {
         super(entTitle, entDescription, date, rentAmount);
         this.team1 = team1;
         this.team2 = team2;

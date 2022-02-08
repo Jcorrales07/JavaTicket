@@ -1,19 +1,22 @@
 package javaticketinferface;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.Calendar;
 
 /** @author Joe Corrales */
 public class Event {
-    protected static int id;
+    protected static ArrayList<Event> events = new ArrayList<>();
+    protected int id;
+    protected static int counter = 1;
     protected String entTitle;
     protected String entDescription;
-    protected Date date;
+    protected Calendar date;
     protected double rentAmount;
 
     public Event() {}
 
-    public Event(String entTitle, String entDescription, Date date, double rentAmount) {
-        Event.id++;
+    public Event(String entTitle, String entDescription, Calendar date, double rentAmount) {
+        this.id = ++Event.counter;
         this.entTitle = entTitle;
         this.entDescription = entDescription;
         this.date = date;
@@ -40,11 +43,11 @@ public class Event {
         this.entDescription = entDescription;
     }
 
-    public Date getDate() {
+    public Calendar getDate() {
         return this.date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(Calendar date) {
         this.date = date;
     }
 

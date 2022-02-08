@@ -13,8 +13,6 @@ public class PrincipalMenu extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Welcome - Principal Menu");
         this.setLocationRelativeTo(null);
-        this.setMinimumSize(new Dimension(642, 680));
-        this.setMaximumSize(new Dimension(642, 680));
     }
 
     /**
@@ -143,23 +141,25 @@ public class PrincipalMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLogOutActionPerformed
 
     private void btnUsrManageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsrManageActionPerformed
-        //Poner logica para solo dejar entrar al ADMIN
-        //if (Usuario logged in es ADMIN) { dale el menu}
-        UserManagementSubMenu menu = new UserManagementSubMenu();
-        menu.setVisible(true);
-        this.setVisible(false);
+        if(Login.userLogged instanceof Admin) {
+            UserManagementSubMenu menu = new UserManagementSubMenu();
+            menu.setVisible(true);
+            this.setVisible(false);
+        } else JOptionPane.showMessageDialog(this, "No mirrey, solo admins");
     }//GEN-LAST:event_btnUsrManageActionPerformed
 
     private void btnReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportsActionPerformed
         ReportsSubMenu menu = new ReportsSubMenu();
         menu.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnReportsActionPerformed
 
     private void btnEvntManageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEvntManageActionPerformed
-        EventManagementSubMenu menu = new EventManagementSubMenu();
-        //Poner logica para solo dejar entrar al ADMIN y al de CONTENIDOS
-        //if (Usuario logged in es NO es Limited user) { dale el menu}
-        menu.setVisible(true);
+        if(Login.userLogged instanceof Admin || Login.userLogged instanceof ContentUser) {
+            EventManagementSubMenu menu = new EventManagementSubMenu();
+            menu.setVisible(true);
+            this.setVisible(false);
+        } else JOptionPane.showMessageDialog(this, "You are not allowed to make this action");
     }//GEN-LAST:event_btnEvntManageActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed

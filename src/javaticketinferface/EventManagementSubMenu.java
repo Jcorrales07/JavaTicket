@@ -139,10 +139,13 @@ public class EventManagementSubMenu extends javax.swing.JFrame {
     private void btnPrincipalMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrincipalMenuActionPerformed
         PrincipalMenu menu = new PrincipalMenu();
         menu.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnPrincipalMenuActionPerformed
 
     private void btnCreateEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateEventActionPerformed
-        // TODO add your handling code here:
+        CreateEvent cevent = new CreateEvent();
+        cevent.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnCreateEventActionPerformed
 
     private void btnDeleteEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteEventActionPerformed

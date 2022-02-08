@@ -210,21 +210,22 @@ public class DeleteUser extends javax.swing.JFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         int id = Integer.parseInt(txtUserID.getText());
-        deleteUser(id);
+        if(deleteUser(id)) JOptionPane.showMessageDialog(this, "User has been deleted");
     }//GEN-LAST:event_btnDeleteActionPerformed
     
-    private void deleteUser(int id) {
+    private boolean deleteUser(int id) {
         String resp = JOptionPane.showInputDialog("You're about to delete a user"
                 + "\nAre you sure? [S/N]: ");
         if (resp.toLowerCase().equals("s")) {
             for(User user : User.users) {
                 if (user.getId() == id) {
-                    System.out.println(user.toString());
+                    //System.out.println(user.toString()); //==-
                     User.users.remove(user);
-                    JOptionPane.showMessageDialog(this, "User has been deleted");
+                    return true;
                 }
             }
         }
+        return false;
     }
     
     private void btnGoBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoBackActionPerformed
