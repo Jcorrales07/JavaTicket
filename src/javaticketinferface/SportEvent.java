@@ -5,6 +5,7 @@ import java.util.Calendar;
 
 /** @author Joe Corrales */
 public class SportEvent extends Event {
+    private final int AMAX = 20000; 
     private String team1;
     private String team2;
     //Se tiene que pedir un tipo de deporte

@@ -160,6 +160,10 @@ public class Login extends JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSigninKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnSigninKeyPressed
+        loginAccess();
+    }//GEN-LAST:event_btnSigninKeyPressed
+
     private void btnSigninActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSigninActionPerformed
         loginAccess();
     }//GEN-LAST:event_btnSigninActionPerformed
@@ -171,10 +175,6 @@ public class Login extends JFrame {
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsernameActionPerformed
-
-    private void btnSigninKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnSigninKeyPressed
-        loginAccess();
-    }//GEN-LAST:event_btnSigninKeyPressed
 
     //Method to valid the username and password
     private void loginAccess() {

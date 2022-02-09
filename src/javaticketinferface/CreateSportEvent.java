@@ -204,6 +204,7 @@ public class CreateSportEvent extends javax.swing.JFrame {
         jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select an option", "1. Football", "2. Tennis", "3. Rugby", "4. Baseball" }));
+        jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 480, 210, 50));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N

@@ -26,6 +26,8 @@ public class CreateEvent extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         cbxOptions = new javax.swing.JComboBox<>();
         btnConfirm = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -53,7 +55,7 @@ public class CreateEvent extends javax.swing.JFrame {
                 cbxOptionsActionPerformed(evt);
             }
         });
-        jPanel1.add(cbxOptions, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 260, 60));
+        jPanel1.add(cbxOptions, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 260, 60));
 
         btnConfirm.setBackground(new java.awt.Color(51, 51, 51));
         btnConfirm.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -70,7 +72,24 @@ public class CreateEvent extends javax.swing.JFrame {
                 btnConfirmKeyPressed(evt);
             }
         });
-        jPanel1.add(btnConfirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 260, 60));
+        jPanel1.add(btnConfirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 260, 60));
+
+        jButton2.setBackground(new java.awt.Color(51, 51, 51));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Go Back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jButton2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton2KeyPressed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 150, 50));
+        jPanel1.add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, -1, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,7 +99,7 @@ public class CreateEvent extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -98,7 +117,18 @@ public class CreateEvent extends javax.swing.JFrame {
         selectTypeEvent();
     }//GEN-LAST:event_btnConfirmKeyPressed
 
-    
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        PrincipalMenu menu = new PrincipalMenu();
+        menu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton2KeyPressed
+        PrincipalMenu menu = new PrincipalMenu();
+        menu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2KeyPressed
+
     private void selectTypeEvent() {
         int type = cbxOptions.getSelectedIndex();
         switch (type) {
@@ -165,6 +195,8 @@ public class CreateEvent extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConfirm;
     private javax.swing.JComboBox<String> cbxOptions;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

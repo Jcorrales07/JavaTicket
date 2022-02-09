@@ -25,4 +25,5 @@ public class ContentUser extends User {
 //    public void setEventIds(ArrayList<Event> eventIds) {
 //        this.eventIds = eventIds;
 //    }
+    
 }

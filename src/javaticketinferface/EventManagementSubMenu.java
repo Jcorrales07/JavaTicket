@@ -32,7 +32,6 @@ public class EventManagementSubMenu extends javax.swing.JFrame {
         btnViewEvent = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(720, 690));
         setMinimumSize(new java.awt.Dimension(720, 690));
         setResizable(false);
 
@@ -130,7 +129,9 @@ public class EventManagementSubMenu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 732, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 768, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -149,7 +150,9 @@ public class EventManagementSubMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCreateEventActionPerformed
 
     private void btnDeleteEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteEventActionPerformed
-        // TODO add your handling code here:
+         DeleteEvent delete = new DeleteEvent();
+         delete.setVisible(true);
+         this.setVisible(false);
     }//GEN-LAST:event_btnDeleteEventActionPerformed
 
     private void btnEditEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditEventActionPerformed
