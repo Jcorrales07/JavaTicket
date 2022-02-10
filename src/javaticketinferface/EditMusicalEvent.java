@@ -1,20 +1,15 @@
 package javaticketinferface;
 
-import javaticketinferface.MusicalEvent.Genre;
-import javax.swing.JOptionPane;
 
-/** @author Joe Corrales */
-public class CreateMusicalEvent extends javax.swing.JFrame {
+public class EditMusicalEvent extends javax.swing.JFrame {
 
     /**
-     * Creates new form CreateMusicalEvent
+     * Creates new form EditMusicalEvent
      */
-    public CreateMusicalEvent() {
+    public EditMusicalEvent() {
         initComponents();
-        this.setTitle("Create Musical Event");
-        this.setLocationRelativeTo(null);
     }
-    CreateEvent func = new CreateEvent();
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,11 +39,12 @@ public class CreateMusicalEvent extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        cbxMusic = new javax.swing.JComboBox<>();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -129,8 +125,8 @@ public class CreateMusicalEvent extends javax.swing.JFrame {
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Musical Event");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
+        jLabel6.setText("Edit a Musical Event");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 100));
 
@@ -147,7 +143,7 @@ public class CreateMusicalEvent extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(51, 51, 51));
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 27)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Create Event");
+        jButton1.setText("Edit Event");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -158,7 +154,7 @@ public class CreateMusicalEvent extends javax.swing.JFrame {
                 jButton1KeyPressed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 910, 210, 50));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 980, 210, 50));
 
         jButton2.setBackground(new java.awt.Color(51, 51, 51));
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 27)); // NOI18N
@@ -174,14 +170,14 @@ public class CreateMusicalEvent extends javax.swing.JFrame {
                 jButton2KeyPressed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 910, 210, 50));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 980, 210, 50));
 
-        cbxMusic.setBackground(new java.awt.Color(102, 102, 102));
-        cbxMusic.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        cbxMusic.setForeground(new java.awt.Color(255, 255, 255));
-        cbxMusic.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select an option", "1. Pop", "2. Rock", "3. Rap", "4. Classic", "5. Reggeaton", "6. Other" }));
-        cbxMusic.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(cbxMusic, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 480, 680, 50));
+        jComboBox1.setBackground(new java.awt.Color(102, 102, 102));
+        jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select an option", "1. Pop", "2. Rock", "3. Rap", "4. Classic", "5. Reggeaton", "6. Other" }));
+        jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 480, 680, 50));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -195,6 +191,11 @@ public class CreateMusicalEvent extends javax.swing.JFrame {
         jPanel1.add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 180, 70, -1));
         jPanel1.add(filler2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 960, -1, 60));
 
+        jButton3.setBackground(new java.awt.Color(42, 40, 40));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        jButton3.setText("Equipment team members");
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 890, 680, 60));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -203,63 +204,30 @@ public class CreateMusicalEvent extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 989, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1067, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        createEvent();
+        //createEvent();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
-        createEvent();
+        //Logica para tecla ENTER
     }//GEN-LAST:event_jButton1KeyPressed
 
-    private void jButton2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton2KeyPressed
-        func.goBack();
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton2KeyPressed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        func.goBack();
-        this.setVisible(false);
+//        func.goBack();
+//        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void createEvent() {
-        int id = CreateSportEvent.counter++;
-        String title = txtTitle.getText();
-        int day = Integer.parseInt(txtDay.getText());
-        int month = Integer.parseInt(txtMonth.getText());
-        int year = Integer.parseInt(txtYear.getText());
-        int type = cbxMusic.getSelectedIndex();
-        Genre musicType = musicType(type);
-        double amount = Double.parseDouble(txtMoneyAmount.getText()); 
-        String desc = txtDescription.getText();
-        Event.events.add(new MusicalEvent(id, title, desc, year, month, day, amount, musicType));
-        JOptionPane.showMessageDialog(this, "Event created successfully!");
-        imprimir();
-    }
-    
-    public void imprimir() {
-        for (Event event : Event.events) {
-            System.out.println(event.toString());
-        }
-    }
-    
-    private Genre musicType(int type) {
-        switch (type) {
-            case 1: return Genre.POP;
-            case 2: return Genre.ROCK;
-            case 3: return Genre.RAP;
-            case 4: return Genre.CLASSIC;
-            case 5: return Genre.REGGEATON;
-            case 6: return Genre.OTHER;
-            default: return null;
-        }
-    }
-    
+    private void jButton2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton2KeyPressed
+//        func.goBack();
+//        this.setVisible(false);
+    }//GEN-LAST:event_jButton2KeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -277,30 +245,31 @@ public class CreateMusicalEvent extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CreateMusicalEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditMusicalEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CreateMusicalEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditMusicalEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CreateMusicalEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditMusicalEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CreateMusicalEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditMusicalEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CreateMusicalEvent().setVisible(true);
+                new EditMusicalEvent().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> cbxMusic;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

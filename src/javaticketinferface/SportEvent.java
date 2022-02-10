@@ -1,41 +1,70 @@
-
 package javaticketinferface;
 
-import java.util.Calendar;
+import java.util.ArrayList;
 
 /** @author Joe Corrales */
 public class SportEvent extends Event {
+    //Class attributes
     private final int AMAX = 20000; 
     private String team1;
     private String team2;
-    //Se tiene que pedir un tipo de deporte
     private Sports sportType;
+    private ArrayList<String> tplayers1;
+    private ArrayList<String> tplayers2;
     
-    //No se si deberia ir ahi
+    //Class enumeration
     public enum Sports {
-        FOOTBALL,
-        TENIS,
-        RUGBY,
-        BASEBALL
+        FOOTBALL, TENNIS, RUGBY, BASEBALL,
     }
     
+    //Constructors
     public SportEvent() {}
     
-    public SportEvent(String entTitle, String entDescription, Calendar date, double rentAmount, String team1, String team2, Sports sportType) {
-        super(entTitle, entDescription, date, rentAmount);
+    public SportEvent(int id, String title, String desc, int year, int month, int day,
+            double rentAmount, String team1, String team2, Sports sportType) {
+        super(id, title, desc, year, month, day, rentAmount);
         this.team1 = team1;
         this.team2 = team2;
         this.sportType = sportType;
+        this.tplayers1 = new ArrayList<>();
+        this.tplayers2 = new ArrayList<>();
     }
 
+    //Getters and setters
+    public String getTeam1() {
+        return team1;
+    }
+
+    public void setTeam1(String team1) {
+        this.team1 = team1;
+    }
+
+    public String getTeam2() {
+        return team2;
+    }
+
+    public void setTeam2(String team2) {
+        this.team2 = team2;
+    }
+
+    public Sports getSportType() {
+        return sportType;
+    }
+
+    public void setSportType(Sports sportType) {
+        this.sportType = sportType;
+    }
+
+    //toString Method
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("SportingEvent { ");
         sb.append(super.toString());
-        sb.append("SportingEvent{ team1=").append(team1);
-        sb.append(", team2=").append(team2);
-        sb.append(", sportType=").append(sportType);
-        sb.append('}');
+        sb.append(", \nTeam 1: ").append(this.team1);
+        sb.append(", \nTeam 2: ").append(this.team2);
+        sb.append(", \nSport Type: ").append(this.sportType);
+        sb.append("\n}");
         return sb.toString();
     }
 }

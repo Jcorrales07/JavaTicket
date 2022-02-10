@@ -5,42 +5,71 @@ import java.util.Calendar;
 
 /** @author Joe Corrales */
 public class Event {
+    //Class attributes
     protected static ArrayList<Event> events = new ArrayList<>();
     protected int id;
-    protected static int counter = 1;
-    protected String entTitle;
-    protected String entDescription;
-    protected Calendar date;
+    protected String title;
+    protected String desc;
+    protected int year;
+    protected int month;
+    protected int day;
+    protected Calendar date = Calendar.getInstance();
     protected double rentAmount;
 
+    //Constructors
     public Event() {}
 
-    public Event(String entTitle, String entDescription, Calendar date, double rentAmount) {
-        this.id = ++Event.counter;
-        this.entTitle = entTitle;
-        this.entDescription = entDescription;
-        this.date = date;
+    public Event(int id, String title, String desc, int year, int month, int day, double rentAmount) {
+        this.id = id;
+        this.title = title;
+        this.desc = desc;
+        this.date.set(year, month, day);
         this.rentAmount = rentAmount;
     }
     
+    //Getters and setters
     public int getId() {
         return this.id;
     }
 
-    public String getEntTitle() {
-        return this.entTitle;
+    public String getTitle() {
+        return this.title;
     }
 
-    public void setEntTitle(String entTitle) {
-        this.entTitle = entTitle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getEntDescription() {
-        return this.entDescription;
+    public String getDescription() {
+        return this.desc;
     }
 
-    public void setEntDescription(String entDescription) {
-        this.entDescription = entDescription;
+    public void setDescription(String desc) {
+        this.desc = desc;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
     }
 
     public Calendar getDate() {
@@ -58,17 +87,16 @@ public class Event {
     public void setRentAmount(double rentAmount) {
         this.rentAmount = rentAmount;
     }
-
+    
+    //toString Method
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Event{entTitle=").append(this.entTitle);
-        sb.append(", entDescription=").append(this.entDescription);
-        sb.append(", date=").append(this.date);
-        sb.append(", rentAmount=").append(this.rentAmount);
-        sb.append('}');
+        sb.append(" \nEvent's ID: ").append(this.id);
+        sb.append(", \nTitle: '").append(this.title).append("'");
+        sb.append(", \nDescription: ").append(this.desc);
+        sb.append(", \nDate: ").append(this.date.getTime());
+        sb.append(", \nAmount: ").append(this.rentAmount).append("$");
         return sb.toString();
     }
-    
-    
 }

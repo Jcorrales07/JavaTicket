@@ -3,7 +3,7 @@ package javaticketinferface;
 import javax.swing.JOptionPane;
 
 /** @author Joe Corrales */
-public class DeleteEvent extends javax.swing.JFrame implements IFunctionable {
+public class DeleteEvent extends javax.swing.JFrame {
     ContentUser userLogged = (ContentUser)Login.userLogged;
 
     public DeleteEvent() {
@@ -124,7 +124,6 @@ public class DeleteEvent extends javax.swing.JFrame implements IFunctionable {
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
     
-    @Override
     public void searchEventsId(int code) {
         /*Antes tengo que buscar si el codigo esta en la lista del 
         Usuario de contenido que acaba de acceder */

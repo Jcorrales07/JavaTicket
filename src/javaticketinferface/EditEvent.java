@@ -1,6 +1,6 @@
 package javaticketinferface;
 
-public class EditEvent extends javax.swing.JFrame implements IFunctionable {
+public class EditEvent extends javax.swing.JFrame {
     /**
      * Creates new form EditEvent
      */
@@ -86,7 +86,7 @@ public class EditEvent extends javax.swing.JFrame implements IFunctionable {
                 jButton2KeyPressed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 150, 50));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 150, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -124,17 +124,27 @@ public class EditEvent extends javax.swing.JFrame implements IFunctionable {
         this.setVisible(false);
     }//GEN-LAST:event_jButton2KeyPressed
 
-    @Override
     public void searchEventsId(int code) {
         for(Event event : Event.events) {
             if (event.getId() == code) {
-                if(event instanceof SportEvent){
-                    
+                if(event instanceof SportEvent) {
+                    EditSportEvent ese = new EditSportEvent();
+                    ese.setVisible(true);
+                    this.setVisible(false);
+                } else if (event instanceof MusicalEvent) {
+                    EditMusicalEvent eme = new EditMusicalEvent();
+                    eme.setVisible(true);
+                    this.setVisible(false);
+                } else {
+                    EditReligiousEvent ere = new EditReligiousEvent();
+                    ere.setVisible(true);
+                    this.setVisible(false);
                 }
-                else if (event instanceof MusicalEvent)
             }
         }
-    }   
+    }
+    
+    
     
     /**
      * @param args the command line arguments

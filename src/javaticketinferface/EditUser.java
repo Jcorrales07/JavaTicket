@@ -272,31 +272,33 @@ public class EditUser extends javax.swing.JFrame {
 
     private void btnSearchUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchUserActionPerformed
         int id = Integer.parseInt(txtUserID.getText());
-        if(searchId(id) != null) {
-            txtName.setText(searchId(id).getName());
-            txtUsername.setText(searchId(id).getUsername());
-            txtPassword.setText(searchId(id).getPassword());
-            txtAge.setText(String.valueOf(searchId(id).getAge()));
-            txtUserType.setText(String.valueOf(searchId(id).getClass().getSimpleName()));
+        if(searchUserId(id) != null) {
+            txtName.setText(searchUserId(id).getName());
+            txtUsername.setText(searchUserId(id).getUsername());
+            txtPassword.setText(searchUserId(id).getPassword());
+            txtAge.setText(String.valueOf(searchUserId(id).getAge()));
+            txtUserType.setText(String.valueOf(searchUserId(id).getClass().getSimpleName()));
         }
     }//GEN-LAST:event_btnSearchUserActionPerformed
     
     private void editUser() {
             int id = Integer.parseInt(txtUserID.getText());
-            if(searchId(id) != null) {
+            if(searchUserId(id) != null) {
                 String name = txtName.getText();
-                searchId(id).setName(name);
+                searchUserId(id).setName(name);
                 String username = txtUsername.getText();
-                searchId(id).setUsername(username);
+                searchUserId(id).setUsername(username);
                 String password = txtPassword.getText();
-                searchId(id).setPassword(password);
+                searchUserId(id).setPassword(password);
                 int age = Integer.parseInt(txtAge.getText()); 
-                if (cFunc.verifyAge(age)) searchId(id).setAge(age);
+                if (cFunc.verifyAge(age)) searchUserId(id).setAge(age);
             }
     }
     
-    public User searchId(int id) {
-        for (User user: User.users) if (user.getId() == id) return user;
+    public User searchUserId(int id) {
+        for (User user: User.users) 
+            if (user.getId() == id) 
+                return user;
         JOptionPane.showConfirmDialog(this, "User not found");
         return null;
     }

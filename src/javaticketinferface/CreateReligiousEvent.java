@@ -1,5 +1,7 @@
 package javaticketinferface;
 
+import javax.swing.JOptionPane;
+
 /** @author Joe Corrales */
 public class CreateReligiousEvent extends javax.swing.JFrame {
 
@@ -89,7 +91,7 @@ public class CreateReligiousEvent extends javax.swing.JFrame {
         txtCode.setBackground(new java.awt.Color(102, 102, 102));
         txtCode.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
         txtCode.setForeground(new java.awt.Color(255, 255, 255));
-        txtCode.setText(String.valueOf(Event.counter)
+        txtCode.setText(String.valueOf(CreateSportEvent.counter)
         );
         txtCode.setToolTipText("");
         jPanel1.add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 680, 50));
@@ -196,11 +198,11 @@ public class CreateReligiousEvent extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        //createEvent();
+        createEvent();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
-        //Logica para tecla ENTER
+        createEvent();
     }//GEN-LAST:event_jButton1KeyPressed
 
     private void jButton2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton2KeyPressed
@@ -213,6 +215,25 @@ public class CreateReligiousEvent extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void createEvent() {
+        int id = CreateSportEvent.counter++;
+        String title = txtTitle.getText();
+        int day = Integer.parseInt(txtDay.getText());
+        int month = Integer.parseInt(txtMonth.getText());
+        int year = Integer.parseInt(txtYear.getText());
+        double amount = Double.parseDouble(txtMoneyAmount.getText());
+        String desc = txtDescription.getText();
+        Event.events.add(new ReligiousEvent(id, title, desc, year, month, day, amount));
+        JOptionPane.showMessageDialog(this, "Event created successfully!");
+        imprimir();
+    }
+    
+    public void imprimir() {
+        for (Event event : Event.events) {
+            System.out.println(event.toString());
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */

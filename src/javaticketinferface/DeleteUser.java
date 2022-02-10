@@ -190,9 +190,9 @@ public class DeleteUser extends javax.swing.JFrame {
 
     private void btnSearchUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchUserActionPerformed
         int id = Integer.parseInt(txtUserID.getText());
-        if(eUser.searchId(id) != null) {
-            txtName.setText(eUser.searchId(id).getName());
-            txtUsername.setText(eUser.searchId(id).getUsername());
+        if(eUser.searchUserId(id) != null) {
+            txtName.setText(eUser.searchUserId(id).getName());
+            txtUsername.setText(eUser.searchUserId(id).getUsername());
         }
     }//GEN-LAST:event_btnSearchUserActionPerformed
 
