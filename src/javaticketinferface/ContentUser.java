@@ -14,6 +14,7 @@ public class ContentUser extends User {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("ContentUser ").append(super.toString());
+        sb.append(", \nEvents created: ").append(eventIds.size());
         return sb.toString();
     }
     

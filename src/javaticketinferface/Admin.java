@@ -15,7 +15,7 @@ public final class Admin extends User {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Admin ").append(super.toString());
-        sb.append(" \nEvent Ids = ").append(eventIds.size());
+        sb.append(" Event Ids = ").append(eventIds.size());
         sb.append(" \n}");
         return sb.toString();
     }

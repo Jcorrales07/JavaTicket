@@ -1,15 +1,14 @@
 package javaticketinferface;
 
+import javax.swing.JTextField;
+
 public class EditEvent extends javax.swing.JFrame {
-    /**
-     * Creates new form EditEvent
-     */
+    
     public EditEvent() {
         initComponents();
         this.setTitle("Edit an Event");
         this.setLocationRelativeTo(null);
     }
-    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -143,8 +142,10 @@ public class EditEvent extends javax.swing.JFrame {
             }
         }
     }
-    
-    
+
+    public JTextField getTxtEventCode() {
+        return txtEventCode;
+    }
     
     /**
      * @param args the command line arguments

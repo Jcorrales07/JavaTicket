@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 /** @author Joe Corrales */
 public class EditSportEvent extends javax.swing.JFrame {
-
+    EditEvent e = new EditEvent();, 
     /**
      * Creates new form EditSportEvent
      */
@@ -52,7 +52,6 @@ public class EditSportEvent extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
-        jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
@@ -99,8 +98,9 @@ public class EditSportEvent extends javax.swing.JFrame {
         txtCode.setBackground(new java.awt.Color(102, 102, 102));
         txtCode.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
         txtCode.setForeground(new java.awt.Color(255, 255, 255));
+        txtCode.setText(String.valueOf(e.getTxtEventCode()));
         txtCode.setToolTipText("");
-        jPanel1.add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 450, 50));
+        jPanel1.add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 680, 50));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -217,17 +217,6 @@ public class EditSportEvent extends javax.swing.JFrame {
         jPanel1.add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 180, 70, -1));
         jPanel1.add(filler2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 960, -1, 60));
 
-        jButton3.setBackground(new java.awt.Color(51, 51, 51));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Search ID");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 160, 210, 50));
-
         jButton4.setBackground(new java.awt.Color(51, 51, 51));
         jButton4.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
@@ -270,21 +259,6 @@ public class EditSportEvent extends javax.swing.JFrame {
     private void jButton2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton2KeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2KeyPressed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        int id = Integer.parseInt(txtCode.getText());
-        if (searchEventId(id) != null) {
-            txtTitle.setText(searchEventId(id).getTitle());
-            //txtDay.setText(searchEventId(id).getDay());
-            //txtMonth.setText(searchEventId(id).getMonth());
-            //txtYear.setText(searchEventId(id).getYear());
-            //txtNameTeam1.setText(searchEventId(id).getTeam1());
-            //txtNameTeam2.setText(searchEventId(id).getTeam2());
-            //cbSport.setSelectedIndex(searchEventId(id).getSportType());
-            txtMoneyAmount.setText(String.valueOf(searchEventId(id).getRentAmount()));
-            txtDescription.setText(searchEventId(id).getDescription());
-        }
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void editEvent() {
         int id = Integer.parseInt(txtCode.getText());
@@ -347,7 +321,6 @@ public class EditSportEvent extends javax.swing.JFrame {
     private javax.swing.Box.Filler filler2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;

@@ -176,7 +176,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="String.valueOf(CreateSportEvent.counter)&#xd;&#xa;" type="code"/>
+              <Connection code="String.valueOf(e.getTxtEventCode())&#xd;&#xa;" type="code"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>

@@ -1,7 +1,7 @@
 package javaticketinferface;
 
 public class EditReligiousEvent extends javax.swing.JFrame {
-
+    EditEvent e = new EditEvent();
     /**
      * Creates new form EditReligiousEvent
      */
@@ -86,7 +86,7 @@ public class EditReligiousEvent extends javax.swing.JFrame {
         txtCode.setBackground(new java.awt.Color(102, 102, 102));
         txtCode.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
         txtCode.setForeground(new java.awt.Color(255, 255, 255));
-        txtCode.setText(String.valueOf(CreateSportEvent.counter)
+        txtCode.setText(String.valueOf(e.getTxtEventCode())
         );
         txtCode.setToolTipText("");
         jPanel1.add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 680, 50));

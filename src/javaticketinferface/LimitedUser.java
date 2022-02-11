@@ -8,7 +8,7 @@ public class LimitedUser extends User {
     
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("LimitedUser ").append(super.toString());
+        sb.append("LimitedUser ").append(super.toString()).append(" \n}");
         return sb.toString();
     }
 }

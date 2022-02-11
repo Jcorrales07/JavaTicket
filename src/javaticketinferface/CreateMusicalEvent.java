@@ -14,6 +14,7 @@ public class CreateMusicalEvent extends javax.swing.JFrame {
         this.setTitle("Create Musical Event");
         this.setLocationRelativeTo(null);
     }
+    CreateSportEvent f2 = new CreateSportEvent();
     CreateEvent func = new CreateEvent();
     /**
      * This method is called from within the constructor to initialize the form.
@@ -211,10 +212,14 @@ public class CreateMusicalEvent extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         createEvent();
+        func.goBack();
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
         createEvent();
+        func.goBack();
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1KeyPressed
 
     private void jButton2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton2KeyPressed
@@ -228,24 +233,25 @@ public class CreateMusicalEvent extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void createEvent() {
+        String username = Login.userLogged.getUsername();
         int id = CreateSportEvent.counter++;
         String title = txtTitle.getText();
         int day = Integer.parseInt(txtDay.getText());
-        int month = Integer.parseInt(txtMonth.getText());
+        int month = time(Integer.parseInt(txtMonth.getText()));
         int year = Integer.parseInt(txtYear.getText());
         int type = cbxMusic.getSelectedIndex();
         Genre musicType = musicType(type);
         double amount = Double.parseDouble(txtMoneyAmount.getText()); 
         String desc = txtDescription.getText();
-        Event.events.add(new MusicalEvent(id, title, desc, year, month, day, amount, musicType));
+        MusicalEvent e = new MusicalEvent(id, title, desc, year, month, day, amount, musicType);
+        Event.events.add(e);
+        f2.addIdToList(username, e);
         JOptionPane.showMessageDialog(this, "Event created successfully!");
-        imprimir();
     }
     
-    public void imprimir() {
-        for (Event event : Event.events) {
-            System.out.println(event.toString());
-        }
+    private final int time(int field) {
+        if (field == 1) return 0;
+        return field - 1;
     }
     
     private Genre musicType(int type) {

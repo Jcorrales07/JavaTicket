@@ -1,5 +1,7 @@
 package javaticketinferface;
 
+import javax.swing.JOptionPane;
+
 /** @author Joe Corrales */
 public class EventManagementSubMenu extends javax.swing.JFrame {
 
@@ -144,27 +146,37 @@ public class EventManagementSubMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPrincipalMenuActionPerformed
 
     private void btnCreateEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateEventActionPerformed
+        if (hasAccess()) {
         CreateEvent cevent = new CreateEvent();
         cevent.setVisible(true);
         this.setVisible(false);
+        } else JOptionPane.showMessageDialog(this, "You can't do this action!");
     }//GEN-LAST:event_btnCreateEventActionPerformed
 
     private void btnDeleteEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteEventActionPerformed
-         DeleteEvent delete = new DeleteEvent();
-         delete.setVisible(true);
-         this.setVisible(false);
+        if (hasAccess()) {
+            DeleteEvent delete = new DeleteEvent();
+            delete.setVisible(true);
+            this.setVisible(false);
+        } else JOptionPane.showMessageDialog(this, "You can't do this action!");
     }//GEN-LAST:event_btnDeleteEventActionPerformed
 
     private void btnEditEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditEventActionPerformed
-        EditEvent edit = new EditEvent();
-        edit.setVisible(true);
-        this.setVisible(false);
+        if (hasAccess()) {
+            EditEvent edit = new EditEvent();
+            edit.setVisible(true);
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_btnEditEventActionPerformed
 
     private void btnViewEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewEventActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnViewEventActionPerformed
 
+    private boolean hasAccess() {
+        return (Login.userLogged instanceof Admin || Login.userLogged instanceof ContentUser);
+    }
+    
     /**
      * @param args the command line arguments
      */

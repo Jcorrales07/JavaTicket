@@ -155,11 +155,9 @@ public class PrincipalMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnReportsActionPerformed
 
     private void btnEvntManageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEvntManageActionPerformed
-        if(Login.userLogged instanceof Admin || Login.userLogged instanceof ContentUser) {
-            EventManagementSubMenu menu = new EventManagementSubMenu();
-            menu.setVisible(true);
-            this.setVisible(false);
-        } else JOptionPane.showMessageDialog(this, "You are not allowed to make this action");
+        EventManagementSubMenu menu = new EventManagementSubMenu();
+        menu.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnEvntManageActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed

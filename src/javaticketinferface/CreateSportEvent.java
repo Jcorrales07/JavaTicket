@@ -6,12 +6,12 @@ import javax.swing.JOptionPane;
 /** @author Joe Corrales */
 public class CreateSportEvent extends javax.swing.JFrame {
     static int counter;
-    
     public CreateSportEvent() {
         initComponents();
         this.setTitle("Create Sport Event");
         this.setLocationRelativeTo(null);
     }
+    Login f = new Login();
     CreateEvent func = new CreateEvent();
     
     @SuppressWarnings("unchecked")
@@ -235,10 +235,14 @@ public class CreateSportEvent extends javax.swing.JFrame {
 
     private void btnCreateEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateEventActionPerformed
         createEvent();
+        func.goBack();
+        this.setVisible(false);
     }//GEN-LAST:event_btnCreateEventActionPerformed
 
     private void btnCreateEventKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnCreateEventKeyPressed
         createEvent();
+        func.goBack();
+        this.setVisible(false);
     }//GEN-LAST:event_btnCreateEventKeyPressed
 
     private void btnGoBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoBackActionPerformed
@@ -247,10 +251,11 @@ public class CreateSportEvent extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGoBackActionPerformed
 
     private void createEvent() {
+        String username = Login.userLogged.getUsername();
         int id = CreateSportEvent.counter++;
         String title = txtTitle.getText();
         int day = Integer.parseInt(txtDay.getText());
-        int month = Integer.parseInt(txtMonth.getText());
+        int month = time(Integer.parseInt(txtMonth.getText()));
         int year = Integer.parseInt(txtYear.getText());
         String name1 = txtNameTeam1.getText();
         String name2 = txtNameTeam2.getText();
@@ -258,8 +263,20 @@ public class CreateSportEvent extends javax.swing.JFrame {
         Sports sportType = sportType(type);
         double amount = Double.parseDouble(txtMoneyAmount.getText());
         String desc = txtDescription.getText();
-        Event.events.add(new SportEvent(id, title, desc, year, month, day, amount, name1, name2, sportType));
+        SportEvent e = new SportEvent(id, title, desc, year, month, day, amount, name1, name2, sportType);
+        Event.events.add(e);
+        addIdToList(username, e);
         JOptionPane.showMessageDialog(this, "Event created successfully!");
+    }
+    
+    public void addIdToList(String username, Event e) {
+        if(f.searchUser(username).getClass().getSimpleName().equals("Admin")) {
+            Admin user = (Admin)f.searchUser(username);
+            user.eventIds.add(e);
+        } else {
+            ContentUser user = (ContentUser) f.searchUser(username);
+            user.eventIds.add(e);
+        } 
     }
     
     private Sports sportType(int type) {
@@ -274,7 +291,7 @@ public class CreateSportEvent extends javax.swing.JFrame {
     
     private final int time(int field) {
         if (field == 1) return 0;
-        return field -1;
+        return field - 1;
     }
     
     private String isEmpty(String field, String message) {

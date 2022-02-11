@@ -1,11 +1,11 @@
 package javaticketinferface;
 
+import java.util.Calendar;
 import javax.swing.JOptionPane;
 
 /** @author Joe Corrales */
 public class DeleteEvent extends javax.swing.JFrame {
-    ContentUser userLogged = (ContentUser)Login.userLogged;
-
+    Login f = new Login();
     public DeleteEvent() {
         initComponents();
         this.setTitle("Delete an Event");
@@ -125,27 +125,47 @@ public class DeleteEvent extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
     
     public void searchEventsId(int code) {
-        /*Antes tengo que buscar si el codigo esta en la lista del 
-        Usuario de contenido que acaba de acceder */
         if(searchUserEventId(code)) {
-           for(Event events : Event.events) {
-                if (events.getId() == code) {
-                    //NO ESTA COMPLETO... FALTA HACER LO DE LOS COMENTARIOS DE ABAJO
-                    Event.events.remove(events);
-                    //Si aun no se realiza ... Se procede a marcarlo como cancelado
-                    //PERO si se cancela un dia antes se cobra el 50% del monto por castigo
-                    //EXCEPTO LAS IGLESIAS NO PAGAN NADA
-                }
+           for(Event event : Event.events) {
+                if (event.getId() == code) {
+                    Calendar today = Calendar.getInstance();
+                    Calendar eventDay = event.getDate();
+                    if(event.isActive() && !(event instanceof ReligiousEvent)) {
+                        if (eventDay.before(today)) {
+                            double charge = event.getRentAmount() * 0.5;
+                            JOptionPane.showMessageDialog(this, "Event canceled\nYou have to pay 50% for compensation"
+                                + "\nTotal amount: "+ charge + "$");
+                        }
+                        JOptionPane.showMessageDialog(this, "Event canceled");
+                        event.setActive(false); 
+                    }
+                } else JOptionPane.showMessageDialog(this, "Event non-existent");
             } 
         }
     }
     
     //Method that searches the code in the Arraylist of the user that is logged in
     private boolean searchUserEventId(int code) {
-        for(Event eventId : userLogged.eventIds)
-            if (eventId.getId() == code) return true;
+        String username = Login.userLogged.getUsername();
+        if (f.searchUser(username).getClass().getSimpleName().equals("Admin")) {
+            for(Event eventId : aUser(username).eventIds)
+                if (eventId.getId() == code) return true;
+        } else {
+            for(Event eventId : cUser(username).eventIds) 
+                if (eventId.getId() == code) return true;
+        }
         JOptionPane.showMessageDialog(this, "You are not the owner of this code");
-        return false;
+        return false; 
+    }
+    
+    public Admin aUser(String username) {
+        Admin user = (Admin)f.searchUser(username);
+        return user;
+    }
+    
+    public ContentUser cUser(String username) {
+        ContentUser user = (ContentUser) f.searchUser(username);
+        return user;
     }
     
     /**

@@ -185,7 +185,7 @@ public class Login extends JFrame {
             if (searchUser(user) != null && searchUser(user).getPassword().equals(pass)) {
                 userLogged = searchUser(user);
                 ventana.setVisible(true);
-                this.setVisible(false);
+                this.setVisible(!true);
             } else JOptionPane.showMessageDialog(this, "Incorrect username or password");
         }
     }
@@ -197,6 +197,7 @@ public class Login extends JFrame {
         }
         return null;
     }
+    
     /**
      * @param args the command line arguments
      */

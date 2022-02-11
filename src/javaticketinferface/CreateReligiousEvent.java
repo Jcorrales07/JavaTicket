@@ -13,6 +13,8 @@ public class CreateReligiousEvent extends javax.swing.JFrame {
         this.setTitle("Create Religious Event");
         this.setLocationRelativeTo(null);
     }
+    Login f = new Login();
+    CreateSportEvent f2 = new CreateSportEvent();
     CreateEvent func = new CreateEvent();
     
     /**
@@ -199,10 +201,14 @@ public class CreateReligiousEvent extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         createEvent();
+        func.goBack();
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
         createEvent();
+        func.goBack();
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1KeyPressed
 
     private void jButton2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton2KeyPressed
@@ -216,22 +222,23 @@ public class CreateReligiousEvent extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void createEvent() {
+        String username = Login.userLogged.getUsername();
         int id = CreateSportEvent.counter++;
         String title = txtTitle.getText();
         int day = Integer.parseInt(txtDay.getText());
-        int month = Integer.parseInt(txtMonth.getText());
+        int month = time(Integer.parseInt(txtMonth.getText()));
         int year = Integer.parseInt(txtYear.getText());
         double amount = Double.parseDouble(txtMoneyAmount.getText());
         String desc = txtDescription.getText();
-        Event.events.add(new ReligiousEvent(id, title, desc, year, month, day, amount));
+        ReligiousEvent e = new ReligiousEvent(id, title, desc, year, month, day, amount);
+        Event.events.add(e);
+        f2.addIdToList(username, e);
         JOptionPane.showMessageDialog(this, "Event created successfully!");
-        imprimir();
     }
     
-    public void imprimir() {
-        for (Event event : Event.events) {
-            System.out.println(event.toString());
-        }
+    private final int time(int field) {
+        if (field == 1) return 0;
+        return field - 1;
     }
     
     /**

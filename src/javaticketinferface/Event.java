@@ -15,6 +15,7 @@ public class Event {
     protected int day;
     protected Calendar date = Calendar.getInstance();
     protected double rentAmount;
+    protected boolean active;
 
     //Constructors
     public Event() {}
@@ -25,6 +26,7 @@ public class Event {
         this.desc = desc;
         this.date.set(year, month, day);
         this.rentAmount = rentAmount;
+        this.active = true;
     }
     
     //Getters and setters
@@ -87,7 +89,15 @@ public class Event {
     public void setRentAmount(double rentAmount) {
         this.rentAmount = rentAmount;
     }
-    
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
     //toString Method
     @Override
     public String toString() {

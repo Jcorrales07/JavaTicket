@@ -65,7 +65,7 @@ public class User {
         sb.append(", \nName = '").append(this.name).append("'");
         sb.append(", \nUsername = '").append(this.username).append("'");
         sb.append(", \nPassword = '").append(this.password).append("'");
-        sb.append(", \nAge = ").append(this.age).append(" \n}\n");
+        sb.append(", \nAge = ").append(this.age);
         return sb.toString();
     }
 }
