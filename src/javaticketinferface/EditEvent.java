@@ -1,6 +1,5 @@
 package javaticketinferface;
 
-import javax.swing.JTextField;
 
 public class EditEvent extends javax.swing.JFrame {
     
@@ -23,9 +22,9 @@ public class EditEvent extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtEventCode = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -49,11 +48,6 @@ public class EditEvent extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Insert the Event's Code: ");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
-
-        txtEventCode.setBackground(new java.awt.Color(102, 102, 102));
-        txtEventCode.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        txtEventCode.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtEventCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 310, 50));
 
         jButton1.setBackground(new java.awt.Color(51, 51, 51));
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -87,6 +81,12 @@ public class EditEvent extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 150, 50));
 
+        jComboBox1.setBackground(new java.awt.Color(51, 51, 51));
+        jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select type", "1. Sport", "2. Musical", "3. Religious" }));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 310, 60));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -102,13 +102,13 @@ public class EditEvent extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int code = Integer.parseInt(txtEventCode.getText());
-        searchEventsId(code);
+        int code = jComboBox1.getSelectedIndex();
+        select(code);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
-        int code = Integer.parseInt(txtEventCode.getText());
-        searchEventsId(code);
+        int code = jComboBox1.getSelectedIndex();
+        select(code);
     }//GEN-LAST:event_jButton1KeyPressed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -123,33 +123,26 @@ public class EditEvent extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton2KeyPressed
 
-    public void searchEventsId(int code) {
-        for(Event event : Event.events) {
-            if (event.getId() == code) {
-                if(event instanceof SportEvent) {
-                    EditSportEvent ese = new EditSportEvent();
-                    ese.setVisible(true);
-                    this.setVisible(false);
-                } else if (event instanceof MusicalEvent) {
-                    EditMusicalEvent eme = new EditMusicalEvent();
-                    eme.setVisible(true);
-                    this.setVisible(false);
-                } else {
-                    EditReligiousEvent ere = new EditReligiousEvent();
-                    ere.setVisible(true);
-                    this.setVisible(false);
-                }
-            }
+    public void select(int code) {
+        switch (code) {
+            case 1:
+                EditSportEvent ese = new EditSportEvent();
+                ese.setVisible(true);
+                this.setVisible(false);
+                break;
+            case 2:
+                EditMusicalEvent eme = new EditMusicalEvent();
+                eme.setVisible(true);
+                this.setVisible(false);
+                break;
+            default:
+                EditReligiousEvent ere = new EditReligiousEvent();
+                ere.setVisible(true);
+                this.setVisible(false);
+                break;
         }
     }
 
-    public JTextField getTxtEventCode() {
-        return txtEventCode;
-    }
-    
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -185,10 +178,10 @@ public class EditEvent extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txtEventCode;
     // End of variables declaration//GEN-END:variables
 }

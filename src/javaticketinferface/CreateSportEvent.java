@@ -6,13 +6,14 @@ import javax.swing.JOptionPane;
 /** @author Joe Corrales */
 public class CreateSportEvent extends javax.swing.JFrame {
     static int counter;
+    Login f = new Login();
+    CreateEvent func = new CreateEvent();
+    
     public CreateSportEvent() {
         initComponents();
         this.setTitle("Create Sport Event");
         this.setLocationRelativeTo(null);
     }
-    Login f = new Login();
-    CreateEvent func = new CreateEvent();
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -255,8 +256,11 @@ public class CreateSportEvent extends javax.swing.JFrame {
         int id = CreateSportEvent.counter++;
         String title = txtTitle.getText();
         int day = Integer.parseInt(txtDay.getText());
+        System.out.println("day = " + day);
         int month = time(Integer.parseInt(txtMonth.getText()));
+        System.out.println("month = " + month);
         int year = Integer.parseInt(txtYear.getText());
+        System.out.println("year = " + year);
         String name1 = txtNameTeam1.getText();
         String name2 = txtNameTeam2.getText();
         int type = cbxSports.getSelectedIndex();
@@ -264,10 +268,13 @@ public class CreateSportEvent extends javax.swing.JFrame {
         double amount = Double.parseDouble(txtMoneyAmount.getText());
         String desc = txtDescription.getText();
         SportEvent e = new SportEvent(id, title, desc, year, month, day, amount, name1, name2, sportType);
+        System.out.println(e.toString());
         Event.events.add(e);
         addIdToList(username, e);
         JOptionPane.showMessageDialog(this, "Event created successfully!");
     }
+
+    
     
     public void addIdToList(String username, Event e) {
         if(f.searchUser(username).getClass().getSimpleName().equals("Admin")) {

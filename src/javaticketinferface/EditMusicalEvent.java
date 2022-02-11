@@ -44,6 +44,7 @@ public class EditMusicalEvent extends javax.swing.JFrame {
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,14 +85,11 @@ public class EditMusicalEvent extends javax.swing.JFrame {
         txtTitle.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(txtTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 680, 50));
 
-        txtCode.setEditable(false);
         txtCode.setBackground(new java.awt.Color(102, 102, 102));
         txtCode.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
         txtCode.setForeground(new java.awt.Color(255, 255, 255));
-        txtCode.setText(String.valueOf(e.getTxtEventCode())
-        );
         txtCode.setToolTipText("");
-        jPanel1.add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 680, 50));
+        jPanel1.add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 320, 50));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -195,6 +193,12 @@ public class EditMusicalEvent extends javax.swing.JFrame {
         jButton3.setText("Equipment team members");
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 890, 680, 60));
 
+        jButton4.setBackground(new java.awt.Color(51, 51, 51));
+        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Search ID");
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, 330, 50));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -226,7 +230,7 @@ public class EditMusicalEvent extends javax.swing.JFrame {
 //        func.goBack();
 //        this.setVisible(false);
     }//GEN-LAST:event_jButton2KeyPressed
-
+  
     /**
      * @param args the command line arguments
      */
@@ -268,6 +272,7 @@ public class EditMusicalEvent extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
