@@ -136,7 +136,7 @@ public class EditReligiousEvent extends javax.swing.JFrame {
         btnEditEvent.setBackground(new java.awt.Color(51, 51, 51));
         btnEditEvent.setFont(new java.awt.Font("Segoe UI", 0, 27)); // NOI18N
         btnEditEvent.setForeground(new java.awt.Color(255, 255, 255));
-        btnEditEvent.setText("Create Event");
+        btnEditEvent.setText("Edit Event");
         btnEditEvent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditEventActionPerformed(evt);
@@ -209,11 +209,13 @@ public class EditReligiousEvent extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEditEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditEventActionPerformed
-        //createEvent();
+        int code = Integer.parseInt(txtCode.getText());
+        editEvent(code);
     }//GEN-LAST:event_btnEditEventActionPerformed
 
     private void btnEditEventKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEditEventKeyPressed
-        //Logica para tecla ENTER
+        int code = Integer.parseInt(txtCode.getText());
+        editEvent(code);
     }//GEN-LAST:event_btnEditEventKeyPressed
 
     private void btnGoBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoBackActionPerformed
@@ -227,7 +229,10 @@ public class EditReligiousEvent extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGoBackKeyPressed
 
     private void btnPeopleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPeopleActionPerformed
-        // TODO add your handling code here:
+        int code = Integer.parseInt(txtCode.getText());
+        ReligiousEvent e = (ReligiousEvent) searchId(code);
+        int number = Integer.parseInt(JOptionPane.showInputDialog(this, "Insert number of people saved: "));
+        e.setPeople(number);
     }//GEN-LAST:event_btnPeopleActionPerformed
 
     private void btnSearchIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchIDActionPerformed
@@ -256,6 +261,25 @@ public class EditReligiousEvent extends javax.swing.JFrame {
             txtDescription.setText(e.getDescription());
             JOptionPane.showMessageDialog(this, "Now you can edit");
         } 
+    }
+    
+    private void editEvent(int code) {
+        if (searchId(code) != null) {
+            ReligiousEvent e = (ReligiousEvent) searchId(code);
+            String title = txtTitle.getText();
+            e.setTitle(title);
+            int day = Integer.parseInt(txtDay.getText());
+            e.setDay(day);
+            int month = Integer.parseInt(txtMonth.getText());
+            e.setMonth(month);
+            int year = Integer.parseInt(txtYear.getText());
+            e.setYear(year);
+            double money = Double.parseDouble(txtMoneyAmount.getText());
+            e.setRentAmount(money);
+            String desc = txtDescription.getText();
+            e.setDescription(desc);
+            JOptionPane.showMessageDialog(func, "Action completed");
+        }
     }
     
     /**

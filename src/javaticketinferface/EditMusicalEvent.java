@@ -264,6 +264,7 @@ public class EditMusicalEvent extends javax.swing.JFrame {
             cbGenre.setSelectedIndex(index(e.getMusicGenre()));
             txtMoneyAmount.setText(String.valueOf(e.getRentAmount()));
             txtDescription.setText(e.getDescription());
+            JOptionPane.showMessageDialog(this, "Now you can edit");
         }
     }
     
