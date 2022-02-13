@@ -256,11 +256,8 @@ public class CreateSportEvent extends javax.swing.JFrame {
         int id = CreateSportEvent.counter++;
         String title = txtTitle.getText();
         int day = Integer.parseInt(txtDay.getText());
-        System.out.println("day = " + day);
         int month = time(Integer.parseInt(txtMonth.getText()));
-        System.out.println("month = " + month);
         int year = Integer.parseInt(txtYear.getText());
-        System.out.println("year = " + year);
         String name1 = txtNameTeam1.getText();
         String name2 = txtNameTeam2.getText();
         int type = cbxSports.getSelectedIndex();
@@ -277,7 +274,7 @@ public class CreateSportEvent extends javax.swing.JFrame {
     
     
     public void addIdToList(String username, Event e) {
-        if(f.searchUser(username).getClass().getSimpleName().equals("Admin")) {
+        if(f.searchUser(username) instanceof Admin) {
             Admin user = (Admin)f.searchUser(username);
             user.eventIds.add(e);
         } else {
@@ -286,7 +283,7 @@ public class CreateSportEvent extends javax.swing.JFrame {
         } 
     }
     
-    private Sports sportType(int type) {
+    public Sports sportType(int type) {
         switch (type) {
             case 1: return Sports.FOOTBALL;
             case 2: return Sports.TENNIS;

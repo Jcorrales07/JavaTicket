@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 /** @author Joe Corrales */
 public class EditSportEvent extends javax.swing.JFrame {
     CreateEvent func = new CreateEvent();
+    CreateSportEvent cse = new CreateSportEvent();
    
     public EditSportEvent() {
         initComponents();
@@ -35,8 +36,8 @@ public class EditSportEvent extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnEditEvent = new javax.swing.JButton();
+        btnGoBack = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         txtNameTeam1 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -46,8 +47,8 @@ public class EditSportEvent extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnPlayers2 = new javax.swing.JButton();
+        btnPlayers1 = new javax.swing.JButton();
         btnSearchId = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -141,37 +142,42 @@ public class EditSportEvent extends javax.swing.JFrame {
         jLabel8.setText("Event's Description: ");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 640, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 27)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Edit Event");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnEditEvent.setBackground(new java.awt.Color(51, 51, 51));
+        btnEditEvent.setFont(new java.awt.Font("Segoe UI", 0, 27)); // NOI18N
+        btnEditEvent.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditEvent.setText("Edit Event");
+        btnEditEvent.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEditEventMouseClicked(evt);
+            }
+        });
+        btnEditEvent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnEditEventActionPerformed(evt);
             }
         });
-        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+        btnEditEvent.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jButton1KeyPressed(evt);
+                btnEditEventKeyPressed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 1020, 210, 50));
+        jPanel1.add(btnEditEvent, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 1020, 210, 50));
 
-        jButton2.setBackground(new java.awt.Color(51, 51, 51));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 27)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Go Back");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnGoBack.setBackground(new java.awt.Color(51, 51, 51));
+        btnGoBack.setFont(new java.awt.Font("Segoe UI", 0, 27)); // NOI18N
+        btnGoBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnGoBack.setText("Go Back");
+        btnGoBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnGoBackActionPerformed(evt);
             }
         });
-        jButton2.addKeyListener(new java.awt.event.KeyAdapter() {
+        btnGoBack.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jButton2KeyPressed(evt);
+                btnGoBackKeyPressed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 1020, 210, 50));
+        jPanel1.add(btnGoBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 1020, 210, 50));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -212,22 +218,27 @@ public class EditSportEvent extends javax.swing.JFrame {
         jPanel1.add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 180, 70, -1));
         jPanel1.add(filler2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 960, -1, 60));
 
-        jButton4.setBackground(new java.awt.Color(51, 51, 51));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Players: Team 2");
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 890, 330, 100));
-
-        jButton5.setBackground(new java.awt.Color(51, 51, 51));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Players: Team 1 ");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnPlayers2.setBackground(new java.awt.Color(51, 51, 51));
+        btnPlayers2.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
+        btnPlayers2.setForeground(new java.awt.Color(255, 255, 255));
+        btnPlayers2.setText("Players: Team 2");
+        btnPlayers2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnPlayers2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 890, 330, 100));
+        jPanel1.add(btnPlayers2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 890, 330, 100));
+
+        btnPlayers1.setBackground(new java.awt.Color(51, 51, 51));
+        btnPlayers1.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
+        btnPlayers1.setForeground(new java.awt.Color(255, 255, 255));
+        btnPlayers1.setText("Players: Team 1 ");
+        btnPlayers1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPlayers1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnPlayers1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 890, 330, 100));
 
         btnSearchId.setBackground(new java.awt.Color(51, 51, 51));
         btnSearchId.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -259,36 +270,62 @@ public class EditSportEvent extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnEditEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditEventActionPerformed
+    }//GEN-LAST:event_btnEditEventActionPerformed
 
-    private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
+    private void btnEditEventKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEditEventKeyPressed
         func.goBack();
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1KeyPressed
+    }//GEN-LAST:event_btnEditEventKeyPressed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnGoBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoBackActionPerformed
         func.goBack();
         this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnGoBackActionPerformed
 
-    private void jButton2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton2KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2KeyPressed
+    private void btnGoBackKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnGoBackKeyPressed
+        func.goBack();
+        this.setVisible(false);
+    }//GEN-LAST:event_btnGoBackKeyPressed
 
     private void btnSearchIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchIdActionPerformed
         int code = Integer.parseInt(txtCode.getText());
-        editEvent(code);
+        putDetails(code);
     }//GEN-LAST:event_btnSearchIdActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void btnPlayers1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayers1ActionPerformed
+        int code = Integer.parseInt(txtCode.getText());
+        if (searchId(code) != null) {
+            int amount = Integer.parseInt(JOptionPane.showInputDialog("Insert the number of players: "));
+            SportEvent e = (SportEvent) searchId(code);
+            for (int i = 0; i < amount; i++) {
+                String name = JOptionPane.showInputDialog("Name of Player #"+(i+1)+": ");
+                e.getTplayers1().add(name);
+            }
+        }
+    }//GEN-LAST:event_btnPlayers1ActionPerformed
 
     private void btnSearchIdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnSearchIdKeyPressed
         int code = Integer.parseInt(txtCode.getText());
-        editEvent(code);
+        putDetails(code);
     }//GEN-LAST:event_btnSearchIdKeyPressed
+
+    private void btnPlayers2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayers2ActionPerformed
+        int code = Integer.parseInt(txtCode.getText());
+        if (searchId(code) != null) {
+            int amount = Integer.parseInt(JOptionPane.showInputDialog("Insert the number of players: "));
+            SportEvent e = (SportEvent) searchId(code);
+            for (int i = 0; i < amount; i++) {
+                String name = JOptionPane.showInputDialog("Name of Player #"+(i+1)+": ");
+                e.getTplayers2().add(name);
+            }
+        }
+    }//GEN-LAST:event_btnPlayers2ActionPerformed
+
+    private void btnEditEventMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditEventMouseClicked
+        int code = Integer.parseInt(txtCode.getText());
+        editEvent(code);
+    }//GEN-LAST:event_btnEditEventMouseClicked
     
     public Event searchId(int code) {
         for (Event event : Event.events) {
@@ -300,8 +337,7 @@ public class EditSportEvent extends javax.swing.JFrame {
         return null;
     }
     
-    
-    private void editEvent(int code) {
+    private void putDetails(int code) {
         if (searchId(code) != null) {
             SportEvent e = (SportEvent) searchId(code);
             txtTitle.setText(e.getTitle());
@@ -313,13 +349,6 @@ public class EditSportEvent extends javax.swing.JFrame {
             cbSport.setSelectedIndex(index(e.getSportType()));
             txtMoneyAmount.setText(String.valueOf(e.getRentAmount()));
             txtDescription.setText(e.getDescription());
-            
-            System.out.println("txtDay = " + txtDay.getText());
-            System.out.println("e.getDay()" + e.getDay());
-            System.out.println("txtMonth = " + txtMonth.getText());
-            System.out.println("e.getMonth()" + e.getMonth());
-            System.out.println("txtYear = " + txtYear.getText());
-            System.out.println("e.getYear()" + e.getYear());
         }
     }
     
@@ -333,16 +362,33 @@ public class EditSportEvent extends javax.swing.JFrame {
         }
     }
     
-//    private void editEvent(int code) {
-//        if (searchId(code) != null) {
-//            String title = txtTitle.getText();
-//            int day = Integer.parseInt(txtDay.getText());
-//            int month = Integer.parseInt(txtMonth.getText());
-//            int year = Integer.parseInt(txtYear.getText());
-//            String team1 = txtNameTeam1.getText();
-//            String team2 = txtNameTeam2.getText();
-//        }
-//    }
+    private void editEvent(int code) {
+        if (searchId(code) != null) {
+            SportEvent e = (SportEvent) searchId(code);
+            String title = txtTitle.getText();
+            e.setTitle(title);
+            int day = Integer.parseInt(txtDay.getText());
+            e.setDay(day);
+            int month = Integer.parseInt(txtMonth.getText());
+            e.setMonth(month);
+            int year = Integer.parseInt(txtYear.getText());
+            e.setYear(year);
+            String team1 = txtNameTeam1.getText();
+            e.setTeam1(team1);
+            String team2 = txtNameTeam2.getText();
+            e.setTeam2(team2);
+            int type = cbSport.getSelectedIndex();
+            Sports sportType = cse.sportType(type);
+            e.setSportType(sportType);
+            double money = Double.parseDouble(txtMoneyAmount.getText());
+            e.setRentAmount(money);
+            String desc = txtDescription.getText();
+            e.setDescription(desc);
+            JOptionPane.showMessageDialog(func, "Action completed");
+        }
+    }
+    
+    
     
 //    private Event searchEventId(int id) {
 //        for (Event event : Event.events)
@@ -382,19 +428,19 @@ public class EditSportEvent extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new EditSportEvent().setVisible(true);
-            }
+            }      
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEditEvent;
+    private javax.swing.JButton btnGoBack;
+    private javax.swing.JButton btnPlayers1;
+    private javax.swing.JButton btnPlayers2;
     private javax.swing.JButton btnSearchId;
     private javax.swing.JComboBox<String> cbSport;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

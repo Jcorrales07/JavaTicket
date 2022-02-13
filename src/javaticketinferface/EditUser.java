@@ -282,17 +282,17 @@ public class EditUser extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSearchUserActionPerformed
     
     private void editUser() {
-            int id = Integer.parseInt(txtUserID.getText());
-            if(searchUserId(id) != null) {
-                String name = txtName.getText();
-                searchUserId(id).setName(name);
-                String username = txtUsername.getText();
-                searchUserId(id).setUsername(username);
-                String password = txtPassword.getText();
-                searchUserId(id).setPassword(password);
-                int age = Integer.parseInt(txtAge.getText()); 
-                if (cFunc.verifyAge(age)) searchUserId(id).setAge(age);
-            }
+        int id = Integer.parseInt(txtUserID.getText());
+        if(searchUserId(id) != null) {
+            String name = txtName.getText();
+            searchUserId(id).setName(name);
+            String username = txtUsername.getText();
+            searchUserId(id).setUsername(username);
+            String password = txtPassword.getText();
+            searchUserId(id).setPassword(password);
+            int age = Integer.parseInt(txtAge.getText()); 
+            if (cFunc.verifyAge(age)) searchUserId(id).setAge(age);
+        }
     }
     
     public User searchUserId(int id) {

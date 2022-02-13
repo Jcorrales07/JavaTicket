@@ -20,8 +20,7 @@ public class SportEvent extends Event {
     //Constructors
     public SportEvent() {}
     
-    public SportEvent(int id, String title, String desc, int year, int month, int day,
-            double rentAmount, String team1, String team2, Sports sportType) {
+    public SportEvent(int id, String title, String desc, int year, int month, int day, double rentAmount, String team1, String team2, Sports sportType) {
         super(id, title, desc, year, month, day, rentAmount);
         this.team1 = team1;
         this.team2 = team2;
@@ -54,6 +53,24 @@ public class SportEvent extends Event {
     public void setSportType(Sports sportType) {
         this.sportType = sportType;
     }
+
+    public ArrayList<String> getTplayers1() {
+        return tplayers1;
+    }
+
+    public void setTplayers1(ArrayList<String> tplayers1) {
+        this.tplayers1 = tplayers1;
+    }
+
+    public ArrayList<String> getTplayers2() {
+        return tplayers2;
+    }
+
+    public void setTplayers2(ArrayList<String> tplayers2) {
+        this.tplayers2 = tplayers2;
+    }
+    
+    
 
     //toString Method
     @Override

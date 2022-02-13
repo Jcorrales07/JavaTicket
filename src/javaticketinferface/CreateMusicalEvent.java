@@ -254,7 +254,7 @@ public class CreateMusicalEvent extends javax.swing.JFrame {
         return field - 1;
     }
     
-    private Genre musicType(int type) {
+    public Genre musicType(int type) {
         switch (type) {
             case 1: return Genre.POP;
             case 2: return Genre.ROCK;
