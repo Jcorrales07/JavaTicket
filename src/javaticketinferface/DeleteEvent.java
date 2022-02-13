@@ -137,7 +137,8 @@ public class DeleteEvent extends javax.swing.JFrame {
                                 + "\nTotal amount: "+ charge + "$");
                         }
                         JOptionPane.showMessageDialog(this, "Event canceled");
-                        event.setActive(false); 
+                        event.setActive(false);
+                        event.setCancel(true);
                     }
                 } else JOptionPane.showMessageDialog(this, "Event non-existent");
             } 

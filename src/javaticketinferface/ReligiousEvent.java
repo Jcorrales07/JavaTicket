@@ -31,10 +31,10 @@ public class ReligiousEvent extends Event {
         StringBuilder sb = new StringBuilder();
         sb.append("ReligiousEvent {");
         sb.append(super.toString());
-        sb.append(", \nFixed amount for grass wear: ").append(this.FIXEDAMOUNT).append("$");
-        sb.append(", \nTotal Amount: ").append(this.TOTAL_AMOUNT).append("$");
-        sb.append(", \nMaximum capacity: ").append(this.AMAX).append(" people");
-        sb.append(", \nSouls for Jesus Christ: ").append(value(this.people));
+//        sb.append(", \nFixed amount for grass wear: ").append(this.FIXEDAMOUNT).append("$");
+//        sb.append(", \nTotal Amount: ").append(this.TOTAL_AMOUNT).append("$");
+//        sb.append(", \nMaximum capacity: ").append(this.AMAX).append(" people");
+//        sb.append(", \nSouls for Jesus Christ: ").append(value(this.people));
         sb.append("\n}");
         return sb.toString();
     }

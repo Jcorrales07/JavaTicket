@@ -39,10 +39,10 @@ public class MusicalEvent extends Event {
         StringBuilder sb = new StringBuilder();
         sb.append("MusicalEvent {");
         sb.append(super.toString());
-        sb.append(", \n30% of grass insurance: ").append(this.thirty).append("$");
-        sb.append(", \nTotal amount: ").append(this.total).append("$");
-        sb.append(", \nMaximum capacity: ").append(this.AMAX).append(" people");
-        sb.append(", \nMusic Genre: ").append(this.musicGenre);
+//        sb.append(", \n30% of grass insurance: ").append(this.thirty).append("$");
+//        sb.append(", \nTotal amount: ").append(this.total).append("$");
+//        sb.append(", \nMaximum capacity: ").append(this.AMAX).append(" people");
+//        sb.append(", \nMusic Genre: ").append(this.musicGenre);
         sb.append("\n}");
         return sb.toString();
     }

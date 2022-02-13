@@ -16,6 +16,7 @@ public class Event {
     protected Calendar date = Calendar.getInstance();
     protected double rentAmount;
     protected boolean active;
+    protected boolean cancel;
 
     //Constructors
     public Event() {}
@@ -27,6 +28,7 @@ public class Event {
         this.date.set(year, month, day);
         this.rentAmount = rentAmount;
         this.active = true;
+        this.cancel = false;
     }
     
     //Getters and setters
@@ -98,6 +100,14 @@ public class Event {
         this.active = active;
     }
 
+    public boolean isCancel() {
+        return cancel;
+    }
+    
+    public void setCancel(boolean cancel) {
+        this.cancel = cancel;
+    }
+    
     //toString Method
     @Override
     public String toString() {
