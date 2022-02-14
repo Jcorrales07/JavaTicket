@@ -133,6 +133,7 @@ public class DeleteEvent extends javax.swing.JFrame {
                     if(event.isActive() && !(event instanceof ReligiousEvent)) {
                         if (eventDay.before(today)) {
                             double charge = event.getRentAmount() * 0.5;
+                            event.setCharge(charge);
                             JOptionPane.showMessageDialog(this, "Event canceled\nYou have to pay 50% for compensation"
                                 + "\nTotal amount: "+ charge + "$");
                         }
@@ -148,7 +149,7 @@ public class DeleteEvent extends javax.swing.JFrame {
     //Method that searches the code in the Arraylist of the user that is logged in
     private boolean searchUserEventId(int code) {
         String username = Login.userLogged.getUsername();
-        if (f.searchUser(username).getClass().getSimpleName().equals("Admin")) {
+        if (f.searchUser(username) instanceof Admin) {
             for(Event eventId : aUser(username).eventIds)
                 if (eventId.getId() == code) return true;
         } else {

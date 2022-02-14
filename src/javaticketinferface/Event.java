@@ -17,6 +17,7 @@ public class Event {
     protected double rentAmount;
     protected boolean active;
     protected boolean cancel;
+    protected double charge;
 
     //Constructors
     public Event() {}
@@ -29,6 +30,7 @@ public class Event {
         this.rentAmount = rentAmount;
         this.active = true;
         this.cancel = false;
+        this.charge = 0;
     }
     
     //Getters and setters
@@ -107,16 +109,35 @@ public class Event {
     public void setCancel(boolean cancel) {
         this.cancel = cancel;
     }
+
+    public double getCharge() {
+        return charge;
+    }
+
+    public void setCharge(double charge) {
+        this.charge = charge;
+    }
     
     //toString Method
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(" \nEvent's ID: ").append(this.id);
-        sb.append(", \nTitle: '").append(this.title).append("'");
-        sb.append(", \nDescription: ").append(this.desc);
-        sb.append(", \nDate: ").append(this.date.getTime());
-        sb.append(", \nAmount: ").append(this.rentAmount).append("$");
+        sb.append(" \t\nEvent's ID: ").append(this.id);
+        sb.append(", \t\nTitle: '").append(this.title).append("'");
+        sb.append(", \t\nDescription: ").append(this.desc);
+        sb.append(", \t\nDate: ").append(this.date.getTime());
+        sb.append(", \t\nAmount: ").append(this.rentAmount).append("$");
+        sb.append(", \t\nActive: ").append(ifActive());
         return sb.toString();
+    }
+    
+    public String ifActive() {
+        String message = (active)?"Event Currently Active": "EVENT HAS BEEN CANCELED";
+        return message;
+    }
+    
+    public String showInfo() {
+        String message = (cancel)? charge+"$" : "0$";
+        return message;
     }
 }

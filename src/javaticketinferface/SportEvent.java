@@ -78,9 +78,10 @@ public class SportEvent extends Event {
         StringBuilder sb = new StringBuilder();
         sb.append("SportingEvent { ");
         sb.append(super.toString());
-//        sb.append(", \nTeam 1: ").append(this.team1);
-//        sb.append(", \nTeam 2: ").append(this.team2);
-//        sb.append(", \nSport Type: ").append(this.sportType);
+        sb.append(", \t\nTeam 1: ").append(this.team1);
+        sb.append(", \t\nTeam 2: ").append(this.team2);
+        sb.append(", \t\nSport Type: ").append(this.sportType);
+        sb.append(", \t\nCharge: ").append(showInfo());
         sb.append("\n}");
         return sb.toString();
     }

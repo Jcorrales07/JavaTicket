@@ -22,8 +22,8 @@ public class EditEvent extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnSearchID = new javax.swing.JButton();
+        btnGoBack = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,40 +46,40 @@ public class EditEvent extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Insert the Event's Code: ");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
+        jLabel2.setText("Choose type event:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Search Event's Code");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSearchID.setBackground(new java.awt.Color(51, 51, 51));
+        btnSearchID.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnSearchID.setForeground(new java.awt.Color(255, 255, 255));
+        btnSearchID.setText("Search Event's Code");
+        btnSearchID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSearchIDActionPerformed(evt);
             }
         });
-        jButton1.addKeyListener(new java.awt.event.KeyAdapter() {
+        btnSearchID.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jButton1KeyPressed(evt);
+                btnSearchIDKeyPressed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 310, 70));
+        jPanel1.add(btnSearchID, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 310, 70));
 
-        jButton2.setBackground(new java.awt.Color(51, 51, 51));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Go Back");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnGoBack.setBackground(new java.awt.Color(51, 51, 51));
+        btnGoBack.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        btnGoBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnGoBack.setText("Go Back");
+        btnGoBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnGoBackActionPerformed(evt);
             }
         });
-        jButton2.addKeyListener(new java.awt.event.KeyAdapter() {
+        btnGoBack.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jButton2KeyPressed(evt);
+                btnGoBackKeyPressed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 150, 50));
+        jPanel1.add(btnGoBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 150, 50));
 
         jComboBox1.setBackground(new java.awt.Color(51, 51, 51));
         jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
@@ -101,27 +101,27 @@ public class EditEvent extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnSearchIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchIDActionPerformed
         int code = jComboBox1.getSelectedIndex();
         select(code);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnSearchIDActionPerformed
 
-    private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed
+    private void btnSearchIDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnSearchIDKeyPressed
         int code = jComboBox1.getSelectedIndex();
         select(code);
-    }//GEN-LAST:event_jButton1KeyPressed
+    }//GEN-LAST:event_btnSearchIDKeyPressed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnGoBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoBackActionPerformed
         PrincipalMenu menu = new PrincipalMenu();
         menu.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnGoBackActionPerformed
 
-    private void jButton2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton2KeyPressed
+    private void btnGoBackKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnGoBackKeyPressed
         PrincipalMenu menu = new PrincipalMenu();
         menu.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton2KeyPressed
+    }//GEN-LAST:event_btnGoBackKeyPressed
 
     public void select(int code) {
         switch (code) {
@@ -176,8 +176,8 @@ public class EditEvent extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnGoBack;
+    private javax.swing.JButton btnSearchID;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

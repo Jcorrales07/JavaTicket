@@ -162,7 +162,9 @@ public class EventManagementSubMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEditEventActionPerformed
 
     private void btnViewEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewEventActionPerformed
-        // TODO add your handling code here:
+       ViewEvent menu = new ViewEvent();
+       menu.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_btnViewEventActionPerformed
 
     private boolean hasAccess() {

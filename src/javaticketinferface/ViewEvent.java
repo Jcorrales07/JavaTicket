@@ -1,8 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package javaticketinferface;
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,12 +28,13 @@ public class ViewEvent extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        btnSearchID = new javax.swing.JButton();
+        txtEventId = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtEventsDetails = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
+        btnGoBack = new javax.swing.JButton();
 
         jToolBar1.setRollover(true);
 
@@ -56,38 +55,38 @@ public class ViewEvent extends javax.swing.JFrame {
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 100));
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Search ID");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSearchID.setBackground(new java.awt.Color(51, 51, 51));
+        btnSearchID.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnSearchID.setForeground(new java.awt.Color(255, 255, 255));
+        btnSearchID.setText("Search ID");
+        btnSearchID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSearchIDActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 250, 50));
+        jPanel3.add(btnSearchID, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 280, 50));
 
-        jTextField1.setBackground(new java.awt.Color(102, 102, 102));
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtEventId.setBackground(new java.awt.Color(102, 102, 102));
+        txtEventId.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        txtEventId.setForeground(new java.awt.Color(255, 255, 255));
+        txtEventId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtEventIdActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 280, -1));
+        jPanel3.add(txtEventId, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 300, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Details: ");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, -1));
 
-        jTextArea1.setBackground(new java.awt.Color(102, 102, 102));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtEventsDetails.setBackground(new java.awt.Color(102, 102, 102));
+        txtEventsDetails.setColumns(20);
+        txtEventsDetails.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtEventsDetails.setForeground(new java.awt.Color(255, 255, 255));
+        txtEventsDetails.setRows(5);
+        jScrollPane1.setViewportView(txtEventsDetails);
 
         jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 620, 390));
 
@@ -95,6 +94,22 @@ public class ViewEvent extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Event's Code: ");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
+
+        btnGoBack.setBackground(new java.awt.Color(51, 51, 51));
+        btnGoBack.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        btnGoBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnGoBack.setText("Go Back");
+        btnGoBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGoBackActionPerformed(evt);
+            }
+        });
+        btnGoBack.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnGoBackKeyPressed(evt);
+            }
+        });
+        jPanel3.add(btnGoBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 760, 210, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,19 +119,34 @@ public class ViewEvent extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 758, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 869, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnSearchIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchIDActionPerformed
+        int id = Integer.parseInt(txtEventId.getText());
+        if (searchEventId(id) != null) {
+            txtEventsDetails.setText(searchEventId(id).toString());
+        } else JOptionPane.showMessageDialog(this, "It doesn't exists!");
+    }//GEN-LAST:event_btnSearchIDActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtEventIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEventIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtEventIdActionPerformed
+
+    private void btnGoBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoBackActionPerformed
+        PrincipalMenu menu = new PrincipalMenu();
+        menu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnGoBackActionPerformed
+
+    private void btnGoBackKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnGoBackKeyPressed
+        PrincipalMenu menu = new PrincipalMenu();
+        menu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnGoBackKeyPressed
 
     public Event searchEventId(int id) {
         for(Event event : Event.events) {
@@ -162,15 +192,16 @@ public class ViewEvent extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnGoBack;
+    private javax.swing.JButton btnSearchID;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JTextField txtEventId;
+    private javax.swing.JTextArea txtEventsDetails;
     // End of variables declaration//GEN-END:variables
 }

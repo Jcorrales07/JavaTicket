@@ -13,8 +13,7 @@ public class Login extends JFrame {
         this.setTitle("Login");
         this.setLocationRelativeTo(null);
     }
-    
-    
+cd     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
