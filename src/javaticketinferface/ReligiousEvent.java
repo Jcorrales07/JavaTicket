@@ -1,5 +1,7 @@
 package javaticketinferface;
 
+import java.util.Date;
+
 /** @author Joe Corrales */
 public class ReligiousEvent extends Event {
     //Class Attributes
@@ -11,8 +13,13 @@ public class ReligiousEvent extends Event {
     //Constructors
     public ReligiousEvent() {}
 
-    public ReligiousEvent(int id, String title, String desc, int year, int month, int day, double rentAmount) {
-        super(id, title, desc, year, month, day, rentAmount);
+    //public ReligiousEvent(int id, String title, String desc, int year, int month, int day, double rentAmount) {
+    //    super(id, title, desc, year, month, day, rentAmount);
+    //    this.people = 0;
+    //}
+    
+    public ReligiousEvent(int id, String title, String desc, Date date, double rentAmount) {
+        super(id, title, desc, date, rentAmount);
         this.people = 0;
     }
 

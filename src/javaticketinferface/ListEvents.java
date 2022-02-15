@@ -1,6 +1,7 @@
 package javaticketinferface;
 
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  *
@@ -180,7 +181,7 @@ public class ListEvents extends javax.swing.JFrame {
 
     
     private void listAllEvents() {
-        Calendar today = Calendar.getInstance();
+        Date today = new Date();
         int sport = 0, $sport = 0;
         int musical = 0, $musical = 0;
         int religious = 0, $religious = 0;
@@ -191,7 +192,7 @@ public class ListEvents extends javax.swing.JFrame {
                 events += ("["+i+"]. Event ID: "+event.getId()+" \t\nType: "
                         + event.getClass().getSimpleName()+" \t\nTitle: "
                         + event.getTitle()+" \t\nDate: "
-                        + event.getDate().getTime()+" \t\nAmount: "
+                        + event.getDate().toString()+" \t\nAmount: "
                         + event.getRentAmount()+"\n\n");
                 i++;
                 if(event instanceof SportEvent) {
