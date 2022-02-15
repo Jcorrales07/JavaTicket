@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 /** @author Joe Corrales */
-public class Event {
+public abstract class Event {
     //Class attributes
     protected static ArrayList<Event> events = new ArrayList<>();
     protected int id;

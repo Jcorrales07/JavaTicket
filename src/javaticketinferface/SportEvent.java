@@ -3,7 +3,7 @@ package javaticketinferface;
 import java.util.ArrayList;
 
 /** @author Joe Corrales */
-public class SportEvent extends Event {
+public final class SportEvent extends Event {
     //Class attributes
     private final int AMAX = 20000; 
     private String team1;
@@ -30,7 +30,7 @@ public class SportEvent extends Event {
     }
 
     //Getters and setters
-    public String getTeam1() {
+    public final String getTeam1() {
         return team1;
     }
 
@@ -38,7 +38,7 @@ public class SportEvent extends Event {
         this.team1 = team1;
     }
 
-    public String getTeam2() {
+    public final String getTeam2() {
         return team2;
     }
 
@@ -46,7 +46,7 @@ public class SportEvent extends Event {
         this.team2 = team2;
     }
 
-    public Sports getSportType() {
+    public final Sports getSportType() {
         return sportType;
     }
 
@@ -54,7 +54,7 @@ public class SportEvent extends Event {
         this.sportType = sportType;
     }
 
-    public ArrayList<String> getTplayers1() {
+    public final ArrayList<String> getTplayers1() {
         return tplayers1;
     }
 
@@ -62,15 +62,13 @@ public class SportEvent extends Event {
         this.tplayers1 = tplayers1;
     }
 
-    public ArrayList<String> getTplayers2() {
+    public final ArrayList<String> getTplayers2() {
         return tplayers2;
     }
 
     public void setTplayers2(ArrayList<String> tplayers2) {
         this.tplayers2 = tplayers2;
     }
-    
-    
 
     //toString Method
     @Override

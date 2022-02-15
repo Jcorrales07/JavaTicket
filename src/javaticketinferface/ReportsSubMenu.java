@@ -3,9 +3,6 @@ package javaticketinferface;
 /** @author Joe Corrales */
 public class ReportsSubMenu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ReportsSubMenu
-     */
     public ReportsSubMenu() {
         initComponents();
         this.setTitle("Reports Menu");

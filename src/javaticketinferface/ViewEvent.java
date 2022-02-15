@@ -13,6 +13,8 @@ public class ViewEvent extends javax.swing.JFrame {
      */
     public ViewEvent() {
         initComponents();
+        this.setTitle("View Event");
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -79,8 +81,9 @@ public class ViewEvent extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Details: ");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, -1));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
 
+        txtEventsDetails.setEditable(false);
         txtEventsDetails.setBackground(new java.awt.Color(102, 102, 102));
         txtEventsDetails.setColumns(20);
         txtEventsDetails.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -88,7 +91,7 @@ public class ViewEvent extends javax.swing.JFrame {
         txtEventsDetails.setRows(5);
         jScrollPane1.setViewportView(txtEventsDetails);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 620, 390));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 620, 440));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
