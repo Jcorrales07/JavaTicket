@@ -1,7 +1,7 @@
 package javaticketinferface;
 
 import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.Date;
 
 /** @author Joe Corrales */
 public abstract class Event {
@@ -10,10 +10,7 @@ public abstract class Event {
     protected int id;
     protected String title;
     protected String desc;
-    protected int year;
-    protected int month;
-    protected int day;
-    protected Calendar date = Calendar.getInstance();
+    protected Date date;
     protected double rentAmount;
     protected boolean active;
     protected boolean cancel;
@@ -22,11 +19,11 @@ public abstract class Event {
     //Constructors
     public Event() {}
 
-    public Event(int id, String title, String desc, int year, int month, int day, double rentAmount) {
+    public Event(int id, String title, String desc, Date date, double rentAmount) {
         this.id = id;
         this.title = title;
         this.desc = desc;
-        this.date.set(year, month, day);
+        this.date = date;
         this.rentAmount = rentAmount;
         this.active = true;
         this.cancel = false;
@@ -54,35 +51,11 @@ public abstract class Event {
         this.desc = desc;
     }
 
-    public int getYear() {
-        return year;
+    public Date getDate() {
+        return date;
     }
 
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public int getMonth() {
-        return month;
-    }
-
-    public void setMonth(int month) {
-        this.month = month;
-    }
-
-    public int getDay() {
-        return day;
-    }
-
-    public void setDay(int day) {
-        this.day = day;
-    }
-
-    public Calendar getDate() {
-        return this.date;
-    }
-
-    public void setDate(Calendar date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -125,7 +98,7 @@ public abstract class Event {
         sb.append(" \t\nEvent's ID: ").append(this.id);
         sb.append(", \t\nTitle: '").append(this.title).append("'");
         sb.append(", \t\nDescription: ").append(this.desc);
-        sb.append(", \t\nDate: ").append(this.date.getTime());
+        sb.append(", \t\nDate: ").append(this.date.toString());
         sb.append(", \t\nAmount: ").append(this.rentAmount).append("$");
         sb.append(", \t\nActive: ").append(ifActive());
         return sb.toString();

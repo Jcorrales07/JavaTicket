@@ -1,5 +1,6 @@
 package javaticketinferface;
 
+import java.util.Date;
 import javaticketinferface.SportEvent.Sports;
 import javax.swing.JOptionPane;
 
@@ -23,16 +24,10 @@ public class CreateSportEvent extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtDescription = new javax.swing.JTextArea();
         txtMoneyAmount = new javax.swing.JTextField();
-        txtDay = new javax.swing.JTextField();
-        txtMonth = new javax.swing.JTextField();
-        txtYear = new javax.swing.JTextField();
         txtTitle = new javax.swing.JTextField();
         txtCode = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -48,7 +43,7 @@ public class CreateSportEvent extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        eventDate = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -63,27 +58,12 @@ public class CreateSportEvent extends javax.swing.JFrame {
         txtDescription.setRows(5);
         jScrollPane1.setViewportView(txtDescription);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 800, 680, 200));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 660, 680, 200));
 
         txtMoneyAmount.setBackground(new java.awt.Color(102, 102, 102));
         txtMoneyAmount.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
         txtMoneyAmount.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtMoneyAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 710, 680, 50));
-
-        txtDay.setBackground(new java.awt.Color(102, 102, 102));
-        txtDay.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
-        txtDay.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 210, -1));
-
-        txtMonth.setBackground(new java.awt.Color(102, 102, 102));
-        txtMonth.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
-        txtMonth.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtMonth, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, 220, -1));
-
-        txtYear.setBackground(new java.awt.Color(102, 102, 102));
-        txtYear.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
-        txtYear.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 390, 210, -1));
+        jPanel1.add(txtMoneyAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 570, 680, 50));
 
         txtTitle.setBackground(new java.awt.Color(102, 102, 102));
         txtTitle.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
@@ -109,21 +89,6 @@ public class CreateSportEvent extends javax.swing.JFrame {
         jLabel2.setText("Event's Title: ");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Day: ");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Month: ");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 360, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Year: ");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 360, 140, -1));
-
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -138,12 +103,12 @@ public class CreateSportEvent extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Amount: ");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 670, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Event's Description: ");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 770, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 630, -1, -1));
 
         btnCreateEvent.setBackground(new java.awt.Color(51, 51, 51));
         btnCreateEvent.setFont(new java.awt.Font("Segoe UI", 0, 27)); // NOI18N
@@ -159,7 +124,7 @@ public class CreateSportEvent extends javax.swing.JFrame {
                 btnCreateEventKeyPressed(evt);
             }
         });
-        jPanel1.add(btnCreateEvent, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 1040, 210, 50));
+        jPanel1.add(btnCreateEvent, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 900, 210, 50));
 
         btnGoBack.setBackground(new java.awt.Color(51, 51, 51));
         btnGoBack.setFont(new java.awt.Font("Segoe UI", 0, 27)); // NOI18N
@@ -175,39 +140,39 @@ public class CreateSportEvent extends javax.swing.JFrame {
                 btnGoBackKeyPressed(evt);
             }
         });
-        jPanel1.add(btnGoBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 1040, 210, 50));
+        jPanel1.add(btnGoBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 900, 210, 50));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Name team 1");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 580, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, -1, -1));
 
         txtNameTeam1.setBackground(new java.awt.Color(102, 102, 102));
         txtNameTeam1.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
         txtNameTeam1.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtNameTeam1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 610, 210, 50));
+        jPanel1.add(txtNameTeam1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 470, 210, 50));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Name team 2");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 580, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, -1, -1));
 
         txtNameTeam2.setBackground(new java.awt.Color(102, 102, 102));
         txtNameTeam2.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
         txtNameTeam2.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtNameTeam2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 610, 220, 50));
+        jPanel1.add(txtNameTeam2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 470, 220, 50));
 
         cbxSports.setBackground(new java.awt.Color(102, 102, 102));
         cbxSports.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         cbxSports.setForeground(new java.awt.Color(255, 255, 255));
         cbxSports.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select an option", "1. Football", "2. Tennis", "3. Rugby", "4. Baseball" }));
         cbxSports.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(cbxSports, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 610, 210, 50));
+        jPanel1.add(cbxSports, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 470, 210, 50));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Type of sport:");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 580, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 440, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -215,7 +180,11 @@ public class CreateSportEvent extends javax.swing.JFrame {
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
         jPanel1.add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 180, 70, -1));
         jPanel1.add(filler2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 960, -1, 60));
-        jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 490, 680, -1));
+
+        eventDate.setBackground(new java.awt.Color(51, 51, 51));
+        eventDate.setForeground(new java.awt.Color(255, 255, 255));
+        eventDate.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        jPanel1.add(eventDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 680, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -225,7 +194,7 @@ public class CreateSportEvent extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1117, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 999, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -257,23 +226,20 @@ public class CreateSportEvent extends javax.swing.JFrame {
         String username = Login.userLogged.getUsername();
         int id = CreateSportEvent.counter++;
         String title = txtTitle.getText();
-        int day = Integer.parseInt(txtDay.getText());
-        int month = time(Integer.parseInt(txtMonth.getText()));
-        int year = Integer.parseInt(txtYear.getText());
+        Date date = eventDate.getDate();
         String name1 = txtNameTeam1.getText();
         String name2 = txtNameTeam2.getText();
         int type = cbxSports.getSelectedIndex();
         Sports sportType = sportType(type);
         double amount = Double.parseDouble(txtMoneyAmount.getText());
         String desc = txtDescription.getText();
-        SportEvent e = new SportEvent(id, title, desc, year, month, day, amount, name1, name2, sportType);
+        SportEvent e = new SportEvent(id, title, desc, date, amount, name1, name2, sportType);
         System.out.println(e.toString());
         Event.events.add(e);
         addIdToList(username, e);
         JOptionPane.showMessageDialog(this, "Event created successfully!");
     }
 
-    
     
     public void addIdToList(String username, Event e) {
         if(f.searchUser(username) instanceof Admin) {
@@ -346,17 +312,14 @@ public class CreateSportEvent extends javax.swing.JFrame {
     private javax.swing.JButton btnCreateEvent;
     private javax.swing.JButton btnGoBack;
     private javax.swing.JComboBox<String> cbxSports;
+    private com.toedter.calendar.JDateChooser eventDate;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -365,13 +328,10 @@ public class CreateSportEvent extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtCode;
-    private javax.swing.JTextField txtDay;
     private javax.swing.JTextArea txtDescription;
     private javax.swing.JTextField txtMoneyAmount;
-    private javax.swing.JTextField txtMonth;
     private javax.swing.JTextField txtNameTeam1;
     private javax.swing.JTextField txtNameTeam2;
     private javax.swing.JTextField txtTitle;
-    private javax.swing.JTextField txtYear;
     // End of variables declaration//GEN-END:variables
 }

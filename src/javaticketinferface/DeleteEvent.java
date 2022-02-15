@@ -1,6 +1,6 @@
 package javaticketinferface;
 
-import java.util.Calendar;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /** @author Joe Corrales */
@@ -123,8 +123,8 @@ public class DeleteEvent extends javax.swing.JFrame {
         if(searchUserEventId(code)) {
             for(Event event : Event.events) {
                 if (event.getId() == code) {
-                    Calendar today = Calendar.getInstance();
-                    Calendar eventDay = event.getDate();
+                    Date today = new Date();
+                    Date eventDay = event.getDate();
                     if(event.isActive() && !(event instanceof ReligiousEvent)) {
                         if (eventDay.before(today)) {
                             double charge = event.getRentAmount() * 0.5;
@@ -139,7 +139,6 @@ public class DeleteEvent extends javax.swing.JFrame {
                 } 
             } 
         } 
-        JOptionPane.showMessageDialog(this, "Event non-existent");
     }
     
     //Method that searches the code in the Arraylist of the user that is logged in
@@ -157,7 +156,7 @@ public class DeleteEvent extends javax.swing.JFrame {
     }
     
     public Admin aUser(String username) {
-        Admin user = (Admin)f.searchUser(username);
+        Admin user = (Admin) f.searchUser(username);
         return user;
     }
     

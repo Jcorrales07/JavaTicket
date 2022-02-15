@@ -1,6 +1,7 @@
 package javaticketinferface;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class MusicalEvent extends Event {
     //Class attributes
@@ -18,8 +19,8 @@ public class MusicalEvent extends Event {
     //Constructors
     public MusicalEvent() {}
     
-    public MusicalEvent(int id, String title, String desc, int year, int month, int day, double rentAmount, Genre musicGenre) {
-        super(id, title, desc, year, month, day, rentAmount);
+    public MusicalEvent(int id, String title, String desc, Date date, double rentAmount, Genre musicGenre) {
+        super(id, title, desc, date, rentAmount);
         this.musicGenre = musicGenre;
         this.mTeam = new ArrayList<>();
     }

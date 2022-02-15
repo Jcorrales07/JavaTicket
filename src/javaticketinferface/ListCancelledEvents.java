@@ -1,6 +1,5 @@
 package javaticketinferface;
 
-import java.util.Calendar;
 
 /**
  *
@@ -185,7 +184,7 @@ public class ListCancelledEvents extends javax.swing.JFrame {
                 events += ("["+i+"]. Event ID: "+event.getId()+" \t\nType: "
                         + event.getClass().getSimpleName()+" \t\nTitle: "
                         + event.getTitle()+" \t\nDate: "
-                        + event.getDate().getTime()+" \t\nAmount: "
+                        + event.getDate().toString()+" \t\nAmount: "
                         + event.getCharge()+"$\n\n");
                 i++;
                 if(event instanceof SportEvent) {

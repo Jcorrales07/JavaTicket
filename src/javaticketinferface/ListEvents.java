@@ -1,6 +1,8 @@
 package javaticketinferface;
 
 import java.util.Calendar;
+import java.util.Date;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -20,6 +22,8 @@ public class ListEvents extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField1 = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -41,6 +45,19 @@ public class ListEvents extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -69,69 +86,69 @@ public class ListEvents extends javax.swing.JFrame {
         txtEvents.setFocusable(false);
         jScrollPane1.setViewportView(txtEvents);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 900, 440));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 900, 290));
 
         txtSport.setEditable(false);
         txtSport.setBackground(new java.awt.Color(102, 102, 102));
         txtSport.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtSport.setForeground(new java.awt.Color(255, 255, 255));
         txtSport.setFocusable(false);
-        jPanel1.add(txtSport, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 660, 280, 50));
+        jPanel1.add(txtSport, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 280, 50));
 
         txtReligious.setEditable(false);
         txtReligious.setBackground(new java.awt.Color(102, 102, 102));
         txtReligious.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtReligious.setForeground(new java.awt.Color(255, 255, 255));
         txtReligious.setFocusable(false);
-        jPanel1.add(txtReligious, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 660, 280, 50));
+        jPanel1.add(txtReligious, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 530, 280, 50));
 
         txtMusical.setEditable(false);
         txtMusical.setBackground(new java.awt.Color(102, 102, 102));
         txtMusical.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtMusical.setForeground(new java.awt.Color(255, 255, 255));
         txtMusical.setFocusable(false);
-        jPanel1.add(txtMusical, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 660, 280, 50));
+        jPanel1.add(txtMusical, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 530, 280, 50));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Religious:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 620, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 490, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Musical:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 620, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Income generated:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 740, 270, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 610, 270, -1));
 
         txt$Sport.setEditable(false);
         txt$Sport.setBackground(new java.awt.Color(102, 102, 102));
         txt$Sport.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txt$Sport.setForeground(new java.awt.Color(255, 255, 255));
         txt$Sport.setFocusable(false);
-        jPanel1.add(txt$Sport, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 780, 280, 50));
+        jPanel1.add(txt$Sport, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 650, 280, 50));
 
         txt$Musical.setEditable(false);
         txt$Musical.setBackground(new java.awt.Color(102, 102, 102));
         txt$Musical.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txt$Musical.setForeground(new java.awt.Color(255, 255, 255));
         txt$Musical.setFocusable(false);
-        jPanel1.add(txt$Musical, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 780, 280, 50));
+        jPanel1.add(txt$Musical, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 650, 280, 50));
 
         txt$Religious.setEditable(false);
         txt$Religious.setBackground(new java.awt.Color(102, 102, 102));
         txt$Religious.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txt$Religious.setForeground(new java.awt.Color(255, 255, 255));
         txt$Religious.setFocusable(false);
-        jPanel1.add(txt$Religious, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 780, 280, 50));
+        jPanel1.add(txt$Religious, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 650, 280, 50));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Sport:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 620, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, -1, -1));
 
         btnPrincipalMenu.setBackground(new java.awt.Color(51, 51, 51));
         btnPrincipalMenu.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
@@ -144,17 +161,17 @@ public class ListEvents extends javax.swing.JFrame {
                 btnPrincipalMenuActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPrincipalMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 850, 430, 90));
+        jPanel1.add(btnPrincipalMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 720, 430, 90));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Income generated:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 740, 270, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, 270, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Income generated:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 740, 270, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 610, 270, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -164,9 +181,7 @@ public class ListEvents extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 976, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 855, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -180,7 +195,7 @@ public class ListEvents extends javax.swing.JFrame {
 
     
     private void listAllEvents() {
-        Calendar today = Calendar.getInstance();
+        Date today = new Date();
         int sport = 0, $sport = 0;
         int musical = 0, $musical = 0;
         int religious = 0, $religious = 0;
@@ -191,7 +206,7 @@ public class ListEvents extends javax.swing.JFrame {
                 events += ("["+i+"]. Event ID: "+event.getId()+" \t\nType: "
                         + event.getClass().getSimpleName()+" \t\nTitle: "
                         + event.getTitle()+" \t\nDate: "
-                        + event.getDate().getTime()+" \t\nAmount: "
+                        + event.getDate().toString()+" \t\nAmount: "
                         + event.getRentAmount()+"\n\n");
                 i++;
                 if(event instanceof SportEvent) {
@@ -204,7 +219,7 @@ public class ListEvents extends javax.swing.JFrame {
                     religious++;
                     $religious += event.getRentAmount();
                 }
-            }
+            } 
         }
         txtEvents.setText(events);
         txtSport.setText(sport+"");
@@ -262,7 +277,9 @@ public class ListEvents extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txt$Musical;
     private javax.swing.JTextField txt$Religious;

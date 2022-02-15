@@ -1,6 +1,7 @@
 package javaticketinferface;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /** @author Joe Corrales */
 public final class SportEvent extends Event {
@@ -20,8 +21,8 @@ public final class SportEvent extends Event {
     //Constructors
     public SportEvent() {}
     
-    public SportEvent(int id, String title, String desc, int year, int month, int day, double rentAmount, String team1, String team2, Sports sportType) {
-        super(id, title, desc, year, month, day, rentAmount);
+    public SportEvent(int id, String title, String desc, Date date, double rentAmount, String team1, String team2, Sports sportType) {
+        super(id, title, desc, date, rentAmount);
         this.team1 = team1;
         this.team2 = team2;
         this.sportType = sportType;

@@ -1,5 +1,9 @@
 package javaticketinferface;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+
 /** @author Joe Corrales */
 public class IncomeByDate extends javax.swing.JFrame {
 
@@ -15,6 +19,8 @@ public class IncomeByDate extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -25,18 +31,6 @@ public class IncomeByDate extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtIYear = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        txtIMonth = new javax.swing.JTextField();
-        txtIDay = new javax.swing.JTextField();
-        txtFDay = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        txtFMonth = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        txtFYear = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
@@ -45,6 +39,8 @@ public class IncomeByDate extends javax.swing.JFrame {
         jTextField11 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         btnPrincipalMenu = new javax.swing.JButton();
+        initialDate = new com.toedter.calendar.JDateChooser();
+        finalDate = new com.toedter.calendar.JDateChooser();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -58,6 +54,19 @@ public class IncomeByDate extends javax.swing.JFrame {
             }
         ));
         jScrollPane1.setViewportView(jTable1);
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -109,66 +118,6 @@ public class IncomeByDate extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Final Date:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
-
-        txtIYear.setBackground(new java.awt.Color(102, 102, 102));
-        txtIYear.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
-        txtIYear.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtIYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 280, -1));
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Day: ");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Month: ");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Year: ");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 170, 140, -1));
-
-        txtIMonth.setBackground(new java.awt.Color(102, 102, 102));
-        txtIMonth.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
-        txtIMonth.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtIMonth, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 280, -1));
-
-        txtIDay.setBackground(new java.awt.Color(102, 102, 102));
-        txtIDay.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
-        txtIDay.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtIDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 280, -1));
-
-        txtFDay.setBackground(new java.awt.Color(102, 102, 102));
-        txtFDay.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
-        txtFDay.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtFDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 280, -1));
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Day: ");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, -1));
-
-        txtFMonth.setBackground(new java.awt.Color(102, 102, 102));
-        txtFMonth.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
-        txtFMonth.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtFMonth, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, 280, -1));
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Month: ");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, -1, -1));
-
-        txtFYear.setBackground(new java.awt.Color(102, 102, 102));
-        txtFYear.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
-        txtFYear.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtFYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 350, 280, -1));
-
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Year: ");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 320, 140, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -232,6 +181,16 @@ public class IncomeByDate extends javax.swing.JFrame {
         });
         jPanel1.add(btnPrincipalMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 790, 430, 90));
 
+        initialDate.setBackground(new java.awt.Color(51, 51, 51));
+        initialDate.setForeground(new java.awt.Color(51, 51, 51));
+        initialDate.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        jPanel1.add(initialDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 880, 60));
+
+        finalDate.setBackground(new java.awt.Color(51, 51, 51));
+        finalDate.setForeground(new java.awt.Color(51, 51, 51));
+        finalDate.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        jPanel1.add(finalDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 880, 60));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -253,7 +212,8 @@ public class IncomeByDate extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPrincipalMenuActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        Date initDate = initialDate.getDate();
+        Date finDate = finalDate.getDate();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
@@ -290,36 +250,28 @@ public class IncomeByDate extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPrincipalMenu;
+    private com.toedter.calendar.JDateChooser finalDate;
+    private com.toedter.calendar.JDateChooser initialDate;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField9;
-    private javax.swing.JTextField txtFDay;
-    private javax.swing.JTextField txtFMonth;
-    private javax.swing.JTextField txtFYear;
-    private javax.swing.JTextField txtIDay;
-    private javax.swing.JTextField txtIMonth;
-    private javax.swing.JTextField txtIYear;
     // End of variables declaration//GEN-END:variables
 }
