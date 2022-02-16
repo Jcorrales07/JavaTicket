@@ -31,7 +31,6 @@ public class EventManagementSubMenu extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(42, 40, 40));
         jPanel3.setMaximumSize(new java.awt.Dimension(720, 690));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -42,13 +41,10 @@ public class EventManagementSubMenu extends javax.swing.JFrame {
         jLabel1.setText("Event Management Menu");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 24, -1, -1));
 
-        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 100));
-
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Options:");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, -1, -1));
 
         btnPrincipalMenu.setBackground(new java.awt.Color(51, 51, 51));
         btnPrincipalMenu.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
@@ -61,7 +57,6 @@ public class EventManagementSubMenu extends javax.swing.JFrame {
                 btnPrincipalMenuActionPerformed(evt);
             }
         });
-        jPanel3.add(btnPrincipalMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 600, 320, 90));
 
         btnCreateEvent.setBackground(new java.awt.Color(51, 51, 51));
         btnCreateEvent.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
@@ -74,7 +69,6 @@ public class EventManagementSubMenu extends javax.swing.JFrame {
                 btnCreateEventActionPerformed(evt);
             }
         });
-        jPanel3.add(btnCreateEvent, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 320, 90));
 
         btnDeleteEvent.setBackground(new java.awt.Color(51, 51, 51));
         btnDeleteEvent.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
@@ -87,7 +81,6 @@ public class EventManagementSubMenu extends javax.swing.JFrame {
                 btnDeleteEventActionPerformed(evt);
             }
         });
-        jPanel3.add(btnDeleteEvent, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 320, 90));
 
         btnEditEvent.setBackground(new java.awt.Color(51, 51, 51));
         btnEditEvent.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
@@ -100,7 +93,6 @@ public class EventManagementSubMenu extends javax.swing.JFrame {
                 btnEditEventActionPerformed(evt);
             }
         });
-        jPanel3.add(btnEditEvent, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 320, 90));
 
         btnViewEvent.setBackground(new java.awt.Color(51, 51, 51));
         btnViewEvent.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
@@ -113,7 +105,41 @@ public class EventManagementSubMenu extends javax.swing.JFrame {
                 btnViewEventActionPerformed(evt);
             }
         });
-        jPanel3.add(btnViewEvent, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 500, 320, 90));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(btnCreateEvent, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDeleteEvent, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEditEvent, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnViewEvent, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPrincipalMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(196, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(jLabel2)
+                .addGap(12, 12, 12)
+                .addComponent(btnCreateEvent, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(btnDeleteEvent, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(btnEditEvent, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(btnViewEvent, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(btnPrincipalMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(61, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -123,9 +149,7 @@ public class EventManagementSubMenu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 768, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

@@ -242,11 +242,11 @@ public class CreateSportEvent extends javax.swing.JFrame {
 
     
     public void addIdToList(String username, Event e) {
-        if(f.searchUser(username) instanceof Admin) {
-            Admin user = (Admin)f.searchUser(username);
+        if(f.searchUser(username, 0) instanceof Admin) {
+            Admin user = (Admin)f.searchUser(username, 0);
             user.eventIds.add(e);
         } else {
-            ContentUser user = (ContentUser) f.searchUser(username);
+            ContentUser user = (ContentUser) f.searchUser(username, 0);
             user.eventIds.add(e);
         } 
     }
@@ -261,20 +261,6 @@ public class CreateSportEvent extends javax.swing.JFrame {
         }
     }
     
-    private final int time(int field) {
-        if (field == 1) return 0;
-        return field - 1;
-    }
-    
-    private String isEmpty(String field, String message) {
-        if (field.length() == 0) 
-            JOptionPane.showMessageDialog(this, message);
-        return field;
-    }
-    
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

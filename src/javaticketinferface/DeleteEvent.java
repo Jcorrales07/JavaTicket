@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 /** @author Joe Corrales */
 public class DeleteEvent extends javax.swing.JFrame {
     Login f = new Login();
+    
     public DeleteEvent() {
         initComponents();
         this.setTitle("Delete an Event");
@@ -135,6 +136,10 @@ public class DeleteEvent extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(this, "Event canceled");
                         event.setActive(false);
                         event.setCancel(true);
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Event canceled");
+                        event.setActive(false);
+                        event.setCancel(true);
                     }
                 } 
             } 
@@ -144,10 +149,13 @@ public class DeleteEvent extends javax.swing.JFrame {
     //Method that searches the code in the Arraylist of the user that is logged in
     private boolean searchUserEventId(int code) {
         String username = Login.userLogged.getUsername();
-        if (f.searchUser(username) instanceof Admin) {
+        System.out.println("1");
+        if (f.searchUser(username, 0) instanceof Admin) {
+            System.out.println("entre 1");
             for(Event eventId : aUser(username).eventIds)
                 if (eventId.getId() == code) return true;
         } else {
+                        System.out.println("entre 2");
             for(Event eventId : cUser(username).eventIds) 
                 if (eventId.getId() == code) return true;
         }
@@ -156,18 +164,15 @@ public class DeleteEvent extends javax.swing.JFrame {
     }
     
     public Admin aUser(String username) {
-        Admin user = (Admin) f.searchUser(username);
+        Admin user = (Admin) f.searchUser(username, 0);
         return user;
     }
     
     public ContentUser cUser(String username) {
-        ContentUser user = (ContentUser) f.searchUser(username);
+        ContentUser user = (ContentUser) f.searchUser(username, 0);
         return user;
     }
     
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -13,7 +13,7 @@ public class Login extends JFrame {
         this.setTitle("Login");
         this.setLocationRelativeTo(null);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -170,22 +170,26 @@ public class Login extends JFrame {
 
     //Method to valid the username and password
     private void loginAccess() {
+        CreateUser f = new CreateUser();
         if(User.users.isEmpty()) User.users.add(new Admin("Super Admin", "admin", "supersecreto", 999));
         String user = txtUsername.getText();
         String pass = txtPassword.getText();
         for (int i = 0; i < User.users.size(); i++) {
-            if (searchUser(user) != null && searchUser(user).getPassword().equals(pass)) {
-                userLogged = searchUser(user);
+            if (f.searchUser(user) != null && f.searchUser(user).getPassword().equals(pass)) {
+                userLogged = f.searchUser(user);
                 ventana.setVisible(true);
                 this.setVisible(!true);
             } else JOptionPane.showMessageDialog(this, "Incorrect username or password");
         }
     }
     
-    protected User searchUser(String username) {
-        for (User user: User.users) {
-            if (user.getUsername().equalsIgnoreCase(username))
-                return user;
+    //Recursive
+    protected User searchUser(String username, int i) {
+        User user = User.users.get(i);
+        int max = User.users.size();
+        if(i < max) {
+            if (user.getUsername().equalsIgnoreCase(username)) { return user; }
+            else searchUser(username, i++);
         }
         return null;
     }

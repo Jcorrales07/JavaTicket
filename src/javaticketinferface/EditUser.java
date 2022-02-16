@@ -39,8 +39,6 @@ public class EditUser extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
         txtAge = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        txtUserType = new javax.swing.JTextField();
         btnEditUser = new javax.swing.JButton();
         btnSearchUser = new javax.swing.JButton();
 
@@ -96,7 +94,7 @@ public class EditUser extends javax.swing.JFrame {
                 btnGoBackActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGoBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 770, 170, 50));
+        jPanel1.add(btnGoBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 680, 170, 50));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -179,19 +177,6 @@ public class EditUser extends javax.swing.JFrame {
         });
         jPanel1.add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 590, 420, 50));
 
-        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("User Type: //Falta revisar ");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 650, -1, -1));
-
-        txtUserType.setBackground(new java.awt.Color(102, 102, 102));
-        txtUserType.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        txtUserType.setForeground(new java.awt.Color(255, 255, 255));
-        txtUserType.setSelectedTextColor(new java.awt.Color(255, 255, 255));
-        txtUserType.setSelectionColor(new java.awt.Color(0, 0, 0));
-        jPanel1.add(txtUserType, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 690, 420, 50));
-
         btnEditUser.setBackground(new java.awt.Color(51, 51, 51));
         btnEditUser.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
         btnEditUser.setForeground(new java.awt.Color(255, 255, 255));
@@ -202,7 +187,7 @@ public class EditUser extends javax.swing.JFrame {
                 btnEditUserActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEditUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 770, 170, 50));
+        jPanel1.add(btnEditUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 680, 170, 50));
 
         btnSearchUser.setBackground(new java.awt.Color(51, 51, 51));
         btnSearchUser.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
@@ -223,7 +208,7 @@ public class EditUser extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -268,6 +253,9 @@ public class EditUser extends javax.swing.JFrame {
 
     private void btnEditUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditUserActionPerformed
         editUser();
+        JOptionPane.showMessageDialog(this, "User has been edited!");
+        UserMenu.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnEditUserActionPerformed
 
     private void btnSearchUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchUserActionPerformed
@@ -277,7 +265,6 @@ public class EditUser extends javax.swing.JFrame {
             txtUsername.setText(searchUserId(id).getUsername());
             txtPassword.setText(searchUserId(id).getPassword());
             txtAge.setText(String.valueOf(searchUserId(id).getAge()));
-            txtUserType.setText(String.valueOf(searchUserId(id).getClass().getSimpleName()));
         }
     }//GEN-LAST:event_btnSearchUserActionPerformed
     
@@ -349,14 +336,12 @@ public class EditUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtName;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserID;
-    private javax.swing.JTextField txtUserType;
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }

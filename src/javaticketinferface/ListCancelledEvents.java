@@ -174,9 +174,9 @@ public class ListCancelledEvents extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPrincipalMenuActionPerformed
 
     private void listAllEvents() {
-        int sport = 0, $sport = 0;
-        int musical = 0, $musical = 0;
-        int religious = 0, $religious = 0;
+        int sport = 0; double $sport = 0;
+        int musical = 0; double $musical = 0;
+        int religious = 0; double $religious = 0;
         int i = 1;
         String events = "";
         for (Event event : Event.events) {

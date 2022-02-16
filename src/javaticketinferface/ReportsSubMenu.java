@@ -39,13 +39,13 @@ public class ReportsSubMenu extends javax.swing.JFrame {
         jLabel1.setText("Reports Menu");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 100));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 100));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Options:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, -1, -1));
 
         btnListEvents.setBackground(new java.awt.Color(51, 51, 51));
         btnListEvents.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
@@ -58,7 +58,7 @@ public class ReportsSubMenu extends javax.swing.JFrame {
                 btnListEventsActionPerformed(evt);
             }
         });
-        jPanel1.add(btnListEvents, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 430, 90));
+        jPanel1.add(btnListEvents, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 430, 90));
 
         btnListCancelledEvents.setBackground(new java.awt.Color(51, 51, 51));
         btnListCancelledEvents.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
@@ -71,7 +71,7 @@ public class ReportsSubMenu extends javax.swing.JFrame {
                 btnListCancelledEventsActionPerformed(evt);
             }
         });
-        jPanel1.add(btnListCancelledEvents, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 430, 90));
+        jPanel1.add(btnListCancelledEvents, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 430, 90));
 
         btnMyProfile.setBackground(new java.awt.Color(51, 51, 51));
         btnMyProfile.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
@@ -84,7 +84,7 @@ public class ReportsSubMenu extends javax.swing.JFrame {
                 btnMyProfileActionPerformed(evt);
             }
         });
-        jPanel1.add(btnMyProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 580, 430, 90));
+        jPanel1.add(btnMyProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 580, 430, 90));
 
         btnPrincipalMenu.setBackground(new java.awt.Color(51, 51, 51));
         btnPrincipalMenu.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
@@ -97,7 +97,7 @@ public class ReportsSubMenu extends javax.swing.JFrame {
                 btnPrincipalMenuActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPrincipalMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 680, 430, 90));
+        jPanel1.add(btnPrincipalMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 680, 430, 90));
 
         btnIncomeGenerated.setBackground(new java.awt.Color(51, 51, 51));
         btnIncomeGenerated.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
@@ -110,7 +110,7 @@ public class ReportsSubMenu extends javax.swing.JFrame {
                 btnIncomeGeneratedActionPerformed(evt);
             }
         });
-        jPanel1.add(btnIncomeGenerated, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, 430, 90));
+        jPanel1.add(btnIncomeGenerated, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 430, 90));
 
         btnListFutureEvents.setBackground(new java.awt.Color(51, 51, 51));
         btnListFutureEvents.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
@@ -121,13 +121,15 @@ public class ReportsSubMenu extends javax.swing.JFrame {
                 btnListFutureEventsActionPerformed(evt);
             }
         });
-        jPanel1.add(btnListFutureEvents, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 430, 90));
+        jPanel1.add(btnListFutureEvents, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 430, 90));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 746, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

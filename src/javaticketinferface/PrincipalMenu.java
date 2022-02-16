@@ -45,7 +45,6 @@ public class PrincipalMenu extends javax.swing.JFrame {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 100));
 
         jPanel3.setBackground(new java.awt.Color(42, 40, 40));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnEvntManage.setBackground(new java.awt.Color(51, 51, 51));
         btnEvntManage.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -57,7 +56,6 @@ public class PrincipalMenu extends javax.swing.JFrame {
                 btnEvntManageActionPerformed(evt);
             }
         });
-        jPanel3.add(btnEvntManage, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 402, 84));
 
         btnReports.setBackground(new java.awt.Color(51, 51, 51));
         btnReports.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -68,7 +66,6 @@ public class PrincipalMenu extends javax.swing.JFrame {
                 btnReportsActionPerformed(evt);
             }
         });
-        jPanel3.add(btnReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 402, 84));
 
         btnUsrManage.setBackground(new java.awt.Color(51, 51, 51));
         btnUsrManage.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -79,13 +76,11 @@ public class PrincipalMenu extends javax.swing.JFrame {
                 btnUsrManageActionPerformed(evt);
             }
         });
-        jPanel3.add(btnUsrManage, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 402, 84));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Options:");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
 
         btnLogOut.setBackground(new java.awt.Color(51, 51, 51));
         btnLogOut.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -96,7 +91,6 @@ public class PrincipalMenu extends javax.swing.JFrame {
                 btnLogOutActionPerformed(evt);
             }
         });
-        jPanel3.add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 402, 84));
 
         btnExit.setBackground(new java.awt.Color(51, 51, 51));
         btnExit.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -107,9 +101,39 @@ public class PrincipalMenu extends javax.swing.JFrame {
                 btnExitActionPerformed(evt);
             }
         });
-        jPanel3.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, 402, 84));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 720, 630));
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(btnEvntManage, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUsrManage, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnReports, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jLabel2)
+                .addGap(22, 22, 22)
+                .addComponent(btnEvntManage, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(btnUsrManage, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(btnReports, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 770, 640));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,7 +143,7 @@ public class PrincipalMenu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 732, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();

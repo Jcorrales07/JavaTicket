@@ -297,6 +297,7 @@ public class EditSportEvent extends javax.swing.JFrame {
         editEvent(code);
     }//GEN-LAST:event_btnEditEventMouseClicked
     
+    //Non-recursive
     public Event searchId(int code) {
         for (Event event : Event.events) {
             if(event.getId() == code && event instanceof SportEvent) { 
@@ -307,9 +308,22 @@ public class EditSportEvent extends javax.swing.JFrame {
         return null;
     }
     
+    //Recursive
+    public Event searchID(int code, int i) {
+        Event event = Event.events.get(i);
+        if(event.getId() == code && event instanceof SportEvent)
+            return event;
+        
+        searchID(code, i++);
+        return null;
+        
+//        JOptionPane.showConfirmDialog(this, "Event not found");
+//        return null;
+    }
+    
     private void putDetails(int code) {
-        if (searchId(code) != null) {
-            SportEvent e = (SportEvent) searchId(code);
+        if (searchID(code, 0) != null) {
+            SportEvent e = (SportEvent) searchID(code, 0);
             txtTitle.setText(e.getTitle());
             eventDate.setDate(e.getDate());
             txtNameTeam1.setText(e.getTeam1());
@@ -352,17 +366,6 @@ public class EditSportEvent extends javax.swing.JFrame {
     }
     
     
-    
-//    private Event searchEventId(int id) {
-//        for (Event event : Event.events)
-//            if (event.getId() == id)
-//                return event;
-//        return null;
-//    }
-    
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

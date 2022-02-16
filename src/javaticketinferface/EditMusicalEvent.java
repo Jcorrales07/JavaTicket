@@ -214,12 +214,24 @@ public class EditMusicalEvent extends javax.swing.JFrame {
         putDetails(code);
     }//GEN-LAST:event_btnSearchIDActionPerformed
    
+    //Non-Recursive
     public Event searchId(int code) {
         for (Event event : Event.events) {
             if(event.getId() == code && event instanceof MusicalEvent) { 
                 return event;
             }
         }
+        JOptionPane.showConfirmDialog(this, "Event not found");
+        return null;
+    }
+    
+    //Recursive
+    public Event searchID(int code, int i) {
+        Event event = Event.events.get(i);
+        if(event.getId() == code && event instanceof MusicalEvent)
+            return event;
+        else searchID(code, i++);
+        
         JOptionPane.showConfirmDialog(this, "Event not found");
         return null;
     }

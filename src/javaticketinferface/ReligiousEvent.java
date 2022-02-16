@@ -2,6 +2,7 @@ package javaticketinferface;
 
 import java.util.Date;
 
+
 /** @author Joe Corrales */
 public class ReligiousEvent extends Event {
     //Class Attributes

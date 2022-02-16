@@ -11,6 +11,7 @@ public abstract class Event {
     protected String title;
     protected String desc;
     protected Date date;
+    protected String fdate;
     protected double rentAmount;
     protected boolean active;
     protected boolean cancel;
@@ -57,6 +58,14 @@ public abstract class Event {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getFdate() {
+        return fdate;
+    }
+
+    public void setFdate(String fdate) {
+        this.fdate = fdate;
     }
 
     public double getRentAmount() {
